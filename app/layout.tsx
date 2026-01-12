@@ -18,7 +18,10 @@ export const metadata: Metadata = {
   title: "Rav Fitness | Personal Trainer in Glen Iris, Melbourne",
   description:
     "Rav Fitness helps people build strength, confidence, and energy through 1-on-1 personal training, small group training, and online coaching at Goodlife Health Clubs Glen Iris, Melbourne.",
-
+  
+  verification: {
+    google: "8ro15hIj7jUEa1pA9t5696cWFPgxS8MxKowgz5T2fS8", // 👈 paste your real code here
+  },
   alternates: {
     canonical: "/",
   },
