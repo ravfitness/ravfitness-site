@@ -89,27 +89,24 @@ export default function HomePage() {
                 Glen Iris • Melbourne • Personal Trainer
               </p>
 
-              {/* Dramatic headline */}
-              <h1 className="text-[1.9rem] md:text-[2.4rem] font-extrabold leading-tight text-gray-900 mb-6">
+              {/* SEO H1 (screen-reader + Google friendly) */}
+<h1 className="sr-only">Personal Trainer in Glen Iris, Melbourne</h1>
 
-                {/* LINE 1 — balanced dramatic */}
-                <span className="block whitespace-nowrap">
-                  Get{" "}
-                  <span className="text-[#f5b533]">Stronger.</span>{" "}
-                  Move{" "}
-                  <span className="text-[#f5b533]">Better.</span>
-                </span>
+{/* Visual headline (keep your dramatic styling) */}
+<h2 className="text-[1.9rem] md:text-[2.4rem] font-extrabold leading-tight text-gray-900 mb-6">
+  <span className="block whitespace-nowrap">
+    Get <span className="text-[#f5b533]">Stronger.</span> Move{" "}
+    <span className="text-[#f5b533]">Better.</span>
+  </span>
+  <span className="block whitespace-nowrap">
+    Feel Like{" "}
+    <span className="underline decoration-[#f5b533] underline-offset-4">
+      Yourself
+    </span>{" "}
+    Again.
+  </span>
+</h2>
 
-                {/* LINE 2 — balanced dramatic */}
-                <span className="block whitespace-nowrap">
-                  Feel Like{" "}
-                  <span className="underline decoration-[#f5b533] underline-offset-4">
-                    Yourself
-                  </span>{" "}
-                  Again.
-                </span>
-
-              </h1>
 
 
 
