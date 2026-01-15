@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://ravfitness.com.au"),
 
-  title: "Rav Fitness | Personal Trainer in Glen Iris, Melbourne",
+  title: "Personal Trainer in Glen Iris, Melbourne | Rav Fitness",
   description:
-    "Rav Fitness helps people build strength, confidence, and energy through 1-on-1 personal training, small group training, and online coaching at Goodlife Health Clubs Glen Iris, Melbourne.",
+    "Build strength, confidence, and energy with Rav Fitness — personal training, small group training, and online coaching in Glen Iris, Melbourne. Never Break The Chain.",
   
   verification: {
     google: "8ro15hIj7jUEa1pA9t5696cWFPgxS8MxKowgz5T2fS8", // 👈 paste your real code here
@@ -29,30 +29,25 @@ export const metadata: Metadata = {
   viewport: "width=device-width, initial-scale=1",
 
   openGraph: {
-    title: "Rav Fitness | Personal Trainer in Glen Iris, Melbourne",
-    description:
-      "Build strength, confidence, and energy with 1-on-1 personal training, small group training, or online coaching at Goodlife Health Clubs Glen Iris.",
-    url: "https://ravfitness.com.au",
-    siteName: "Rav Fitness",
-    images: [
-      {
-        url: "/og.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Rav Fitness — Personal Trainer in Glen Iris, Melbourne",
-      },
-    ],
-    locale: "en_AU",
-    type: "website",
-  },
+  title: "Personal Trainer in Glen Iris, Melbourne | Rav Fitness",
+  description:
+    "Build strength, confidence, and energy with Rav Fitness — personal training, small group training, and online coaching in Glen Iris, Melbourne. Never Break The Chain.",
+  url: "https://ravfitness.com.au/",
+  siteName: "Rav Fitness",
+  images: [
+    {
+      url: "/og.jpg",
+      width: 1200,
+      height: 630,
+      alt: "Rav Fitness — Personal Trainer in Glen Iris, Melbourne",
+    },
+  ],
+  locale: "en_AU",
+  type: "website",
+},
 
-  twitter: {
-    card: "summary_large_image",
-    title: "Rav Fitness | Personal Trainer in Glen Iris, Melbourne",
-    description:
-      "Build strength, confidence, and energy with 1-on-1 personal training, small group training, or online coaching at Goodlife Glen Iris.",
-    images: ["/og.jpg"],
-  },
+
+
 
   robots: {
     index: true,
