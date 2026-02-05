@@ -90,22 +90,22 @@ export default function HomePage() {
               </p>
 
               {/* SEO H1 (screen-reader + Google friendly) */}
-<h1 className="sr-only">Personal Trainer in Glen Iris, Melbourne</h1>
+              <h1 className="sr-only">Personal Trainer in Glen Iris, Melbourne</h1>
 
-{/* Visual headline (keep your dramatic styling) */}
-<h2 className="text-[1.9rem] md:text-[2.4rem] font-extrabold leading-tight text-gray-900 mb-6">
-  <span className="block whitespace-nowrap">
-    Get <span className="text-[#f5b533]">Stronger.</span> Move{" "}
-    <span className="text-[#f5b533]">Better.</span>
-  </span>
-  <span className="block whitespace-nowrap">
-    Feel Like{" "}
-    <span className="underline decoration-[#f5b533] underline-offset-4">
-      Yourself
-    </span>{" "}
-    Again.
-  </span>
-</h2>
+              {/* Visual headline (keep your dramatic styling) */}
+              <h2 className="text-[1.9rem] md:text-[2.4rem] font-extrabold leading-tight text-gray-900 mb-6">
+                <span className="block whitespace-nowrap">
+                  Get <span className="text-[#f5b533]">Stronger.</span> Move{" "}
+                  <span className="text-[#f5b533]">Better.</span>
+                </span>
+                <span className="block whitespace-nowrap">
+                  Feel Like{" "}
+                  <span className="underline decoration-[#f5b533] underline-offset-4">
+                    Yourself
+                  </span>{" "}
+                  Again.
+                </span>
+              </h2>
 
 
 
@@ -556,35 +556,34 @@ export default function HomePage() {
               </div>
 
 
-              {/* Coming Soon – David */}
-              <div className="h-full relative rounded-2xl border border-[#f5b533] bg-black text-white p-6 flex flex-col justify-center items-center text-center min-h-[360px] shadow-lg">
+              {/* Card 3 – David */}
+              <div className="h-full rounded-2xl border border-gray-200 bg-white shadow-sm p-6 flex flex-col">
 
-
-                {/* Lock Badge */}
-                <div className="absolute top-4 right-4 text-[#f5b533] text-xs font-semibold tracking-wide uppercase">
-                  Coming Next
+                <div className="flex items-center gap-4">
+                  <div className="h-11 w-11 rounded-full border border-[#f5b533]/60 bg-gray-100" />
+                  <div className="leading-tight">
+                    <div className="font-semibold text-gray-900">David, 74</div>
+                    <div className="text-xs text-gray-500">Goodlife Glen Iris • Managing Director</div>
+                  </div>
                 </div>
 
-                <div className="w-16 h-16 rounded-full border-2 border-[#f5b533] flex items-center justify-center mb-4">
-                  <span className="text-[#f5b533] text-xl font-bold">🔒</span>
-                </div>
-
-                <h3 className="text-lg font-semibold mb-2">
-                  David
-                </h3>
-
-                <p className="text-sm text-neutral-400 mb-4">
-                  Real client · Transformation in progress
+                <p className="mt-3 text-[13px] leading-[1.55] text-gray-700">
+                  “At nearly 75, returning to the gym after decades, I was looking for clear guidance,
+                  encouragement, and a trainer who could tailor a program to my needs and goals.
+                  <br /><br />
+                  Having completed long-distance walks including the French Camino, the Inca Trail,
+                  and the Portuguese Camino, I’m not slowing down — I’m preparing for my next adventure.
+                  <br /><br />
+                  Ravi’s coaching is calm, knowledgeable, and delivered at the right pace. Each session
+                  builds confidence and capability. This isn’t rushed training — it’s a sustainable,
+                  life-changing journey.”
                 </p>
 
-                <p className="text-sm text-neutral-300 leading-relaxed max-w-[260px]">
-
-                  David’s results and full testimonial are being added.
-                  Real progress takes time — and we only publish what’s earned.
-                </p>
-
-                <div className="mt-6 text-[#f5b533] text-xs tracking-wider uppercase">
-                  Never Break The Chain
+                <div className="mt-auto flex items-center justify-between pt-4">
+                  <span className="text-xs font-semibold text-gray-900">
+                    Results: <span className="text-[#b8860b]">Energy • Confidence • Health • Vitality</span>
+                  </span>
+                  <span className="text-xs text-gray-500">6 months (still training)</span>
                 </div>
               </div>
 
