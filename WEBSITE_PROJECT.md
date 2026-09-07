@@ -64,19 +64,19 @@ The website should clearly present RavFitness services, packages, offers, client
 * Local development server: Passed
 * Production build: Passed
 * Production deployment: Ready
-* Current lint status: Two existing `react/no-unescaped-entities` errors
-* Known lint locations: `app/page.tsx` lines 415 and 515
+* Current lint status: Passed after RF-001
+* Known lint locations: Resolved by RF-001
 
 ## Product Backlog
 
 | ID     | Priority | Epic        | Work Item                                                      | Status  |
 | ------ | -------- | ----------- | -------------------------------------------------------------- | ------- |
-| RF-001 | P0       | Foundation  | Fix the two existing JSX lint errors                           | Review |
+| RF-001 | P0       | Foundation  | Fix the two existing JSX lint errors                           | Done |
 | RF-002 | P0       | Foundation  | Test all navigation links and CTA buttons                      | Backlog |
 | RF-003 | P0       | Foundation  | Review mobile, tablet and desktop layouts                      | Backlog |
 | RF-004 | P0       | Foundation  | Check image quality, loading and compression                   | Backlog |
 | RF-005 | P0       | Foundation  | Review accessibility and semantic structure                    | Backlog |
-| RF-006 | P0       | Foundation  | Review current project structure and component boundaries      | Backlog |
+| RF-006 | P0       | Foundation  | Define website information architecture and component boundaries | Backlog |
 | RF-007 | P1       | Booking     | Define the complimentary-session experience                    | Backlog |
 | RF-008 | P1       | Booking     | Select the initial booking system                              | Backlog |
 | RF-009 | P1       | Booking     | Build the complimentary-session booking page                   | Backlog |
@@ -125,12 +125,12 @@ Create a clean, verified and reliable technical foundation without redesigning t
 
 | ID     | Task                                     | Status  |
 | ------ | ---------------------------------------- | ------- |
-| RF-001 | Fix the two existing JSX lint errors     | Review |
+| RF-001 | Fix the two existing JSX lint errors     | Done |
 | RF-002 | Test navigation and CTA links            | Backlog |
 | RF-003 | Review responsive layouts                | Backlog |
 | RF-004 | Check image performance                  | Backlog |
 | RF-005 | Review accessibility basics              | Backlog |
-| RF-006 | Document the current component structure | Backlog |
+| RF-006 | Define website information architecture and component boundaries | Backlog |
 
 ### Sprint 0 Definition of Done
 
@@ -196,7 +196,7 @@ Add client access and onboarding connections after the separate fitness app is r
 
 ## Current Next Task
 
-**RF-001 — Fix the two existing JSX lint errors in `app/page.tsx`.**
+**RF-006 — Define website information architecture and component boundaries**
 
 No other website changes should begin until RF-001 is completed, tested and recorded.
 
@@ -207,4 +207,4 @@ Add one entry after every completed task.
 | Date             | Task             | Result    | Commit    | Deployment |
 | ---------------- | ---------------- | --------- | --------- | ---------- |
 | 6 September 2026 | Project baseline | Completed | `6bc3736` | Ready      |
-| 7 September 2026 | RF-001 JSX lint fixes | Lint, build and local visual test passed | Pending | Pending |
+| 7 September 2026 | RF-001 JSX lint fixes | Lint, build and local visual test passed | 373cc7b | Production Ready |
