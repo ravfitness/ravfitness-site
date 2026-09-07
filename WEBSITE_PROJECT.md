@@ -71,7 +71,7 @@ The website should clearly present RavFitness services, packages, offers, client
 
 | ID     | Priority | Epic        | Work Item                                                      | Status  |
 | ------ | -------- | ----------- | -------------------------------------------------------------- | ------- |
-| RF-001 | P0       | Foundation  | Fix the two existing JSX lint errors                           | Ready   |
+| RF-001 | P0       | Foundation  | Fix the two existing JSX lint errors                           | Review |
 | RF-002 | P0       | Foundation  | Test all navigation links and CTA buttons                      | Backlog |
 | RF-003 | P0       | Foundation  | Review mobile, tablet and desktop layouts                      | Backlog |
 | RF-004 | P0       | Foundation  | Check image quality, loading and compression                   | Backlog |
@@ -125,7 +125,7 @@ Create a clean, verified and reliable technical foundation without redesigning t
 
 | ID     | Task                                     | Status  |
 | ------ | ---------------------------------------- | ------- |
-| RF-001 | Fix the two existing JSX lint errors     | Ready   |
+| RF-001 | Fix the two existing JSX lint errors     | Review |
 | RF-002 | Test navigation and CTA links            | Backlog |
 | RF-003 | Review responsive layouts                | Backlog |
 | RF-004 | Check image performance                  | Backlog |
@@ -207,3 +207,4 @@ Add one entry after every completed task.
 | Date             | Task             | Result    | Commit    | Deployment |
 | ---------------- | ---------------- | --------- | --------- | ---------- |
 | 6 September 2026 | Project baseline | Completed | `6bc3736` | Ready      |
+| 7 September 2026 | RF-001 JSX lint fixes | Lint, build and local visual test passed | Pending | Pending |

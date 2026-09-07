@@ -412,7 +412,7 @@ export default function HomePage() {
                       <span className="font-semibold">
                         to help you move better, feel stronger, stay balanced and build confidence from the inside out
                       </span>{" "}
-                      — no matter where you're starting from or what life has thrown your way.
+                      — no matter where you&apos;re starting from or what life has thrown your way.
                     </p>
 
                     <p className="mt-2 text-xs text-gray-600 md:max-w-none">
@@ -512,7 +512,7 @@ export default function HomePage() {
                   past five months I’ve noticed improved mood, energy, strength, motivation, fitness, and self-confidence.
                   I’m now able to function better in my daily life.
                   <br />
-                  I’m still training with Ravi, and it’s one of the best decisions I’ve made for my health."
+                  I’m still training with Ravi, and it’s one of the best decisions I’ve made for my health.&quot;
                 </p>
 
                 <div className="mt-auto flex items-center justify-between pt-4">
