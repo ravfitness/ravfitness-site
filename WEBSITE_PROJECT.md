@@ -76,7 +76,7 @@ The website should clearly present RavFitness services, packages, offers, client
 | RF-003 | P0       | Foundation  | Review mobile, tablet and desktop layouts                      | Backlog |
 | RF-004 | P0       | Foundation  | Check image quality, loading and compression                   | Backlog |
 | RF-005 | P0       | Foundation  | Review accessibility and semantic structure                    | Backlog |
-| RF-006 | P0       | Foundation  | Define website information architecture and component boundaries | Backlog |
+| RF-006 | P0       | Foundation  | Define website information architecture and component boundaries | In Progress |
 | RF-007 | P1       | Booking     | Define the complimentary-session experience                    | Backlog |
 | RF-008 | P1       | Booking     | Select the initial booking system                              | Backlog |
 | RF-009 | P1       | Booking     | Build the complimentary-session booking page                   | Backlog |
@@ -130,7 +130,7 @@ Create a clean, verified and reliable technical foundation without redesigning t
 | RF-003 | Review responsive layouts                | Backlog |
 | RF-004 | Check image performance                  | Backlog |
 | RF-005 | Review accessibility basics              | Backlog |
-| RF-006 | Define website information architecture and component boundaries | Backlog |
+| RF-006 | Define website information architecture and component boundaries | In Progress |
 
 ### Sprint 0 Definition of Done
 
@@ -197,6 +197,233 @@ Add client access and onboarding connections after the separate fitness app is r
 ## Current Next Task
 
 **RF-006 — Define website information architecture and component boundaries**
+
+### Approved Website Navigation
+
+Primary navigation: Home | Coaching | Fitness Hub | About Ravi | Client Results | Book a Complimentary Session
+
+| Navigation label | Route |
+| ---------------- | ----- |
+| Home | `/` |
+| Coaching | `/coaching` |
+| Fitness Hub | `/fitness-hub` |
+| About Ravi | `/about` |
+| Client Results | `/results` |
+| Book a Complimentary Session | `/book` |
+
+* “How We Can Train” may remain a homepage section heading, but the navigation label will be “Coaching”.
+* “Real People. Real Results.” may remain a page or section heading, but the navigation label will be “Client Results”.
+* “Fitness Hub” will be used instead of “Blog” or “Resources”.
+* The booking navigation item should remain the visually prominent primary CTA.
+* Detailed coaching, package and content routes are not yet approved.
+
+### Approved Home Page Content Map
+
+#### A. Header
+
+* RavFitness brand
+* Approved primary navigation
+* Prominent Book a Complimentary Session button
+
+#### B. Hero
+
+* Personal Trainer in Glen Iris, Melbourne identifier
+* Strong benefit-led headline
+* Short supporting message
+* Primary CTA: Book a Complimentary Session
+* Secondary CTA: Explore Coaching
+* Professional coaching photo or short muted coaching video
+* The current transformation comparison should move out of the hero
+
+#### C. Quick Trust Strip
+
+* One-on-one coaching
+* Small-group training
+* Online coaching
+* Goodlife Glen Iris
+
+#### D. Coaching Options Preview
+
+* One-on-One Coaching
+* Small-Group Training
+* Online Coaching
+* Each option should contain a short audience description, one main benefit and a Learn More link
+* Add a View All Coaching Options link
+* Detailed packages and pricing should not crowd the Home page
+
+#### E. About Ravi and Transformation Preview
+
+* Short professional introduction
+* Brief reference to Ravi’s 15-year corporate career and transition into fitness coaching
+* Compact before-and-after transformation
+* Emphasis on structure and consistency
+* Link: Read Ravi’s Story
+
+#### F. Featured Client Results
+
+* Initially feature Anthea, Andrew and David
+* Use a concise result headline
+* Use a shortened testimonial
+* Show a client photo where permission exists
+* Show time training
+* Link: Read Client Results
+
+#### G. Fitness Hub Preview
+
+* Show only a small selection of featured educational content
+* Allow a mixture of training tips, exercise technique, lifestyle content and videos
+* Link: Explore the Fitness Hub
+* Do not display the entire content library on Home
+
+#### H. Complimentary Session CTA
+
+* Explain who the session is for
+* Explain what happens during the session
+* Show its duration and location once approved
+* Primary button: Book a Complimentary Session
+
+#### I. Location and Contact
+
+* Goodlife Health Clubs Glen Iris
+* Address
+* Google Maps
+* Phone and WhatsApp
+* Email
+* Instagram
+
+#### J. Footer
+
+* Navigation
+* Contact details
+* Privacy Policy
+* Terms
+* Copyright
+* Never Break The Chain
+
+### Content Moving Away from the Current Home Page
+
+* Full coaching descriptions move to Coaching.
+* Full personal and transformation story moves to About Ravi.
+* Complete testimonials and client transformations move to Client Results.
+* Package details move to Coaching or a future Packages route.
+* General educational fitness content moves to Fitness Hub.
+* The complete booking process moves to Book.
+* Policies move to Privacy and Terms pages.
+
+The Home page must still contain useful summaries and conversion content. It must not become only a list of links.
+
+### Approved Fitness Hub
+
+Navigation label: Fitness Hub
+
+Route: `/fitness-hub`
+
+Initial categories:
+
+* Training Tips
+* Exercise Technique
+* Lifestyle and Habits
+* Videos
+* Stories and Insights
+
+Fitness Hub rules:
+
+* Fitness Hub content must remain separate from coaching sales content.
+* The Fitness Hub landing page should organize content by category.
+* Each substantial article or video should support an independent URL.
+* Content must be structured so new articles and videos can be added without rewriting the page layout.
+* The Home page may show only a small featured-content preview.
+* Verified client outcomes belong primarily in Client Results.
+* Educational stories may link between Fitness Hub and Client Results.
+* Every content item should be independently maintainable.
+* Content should support future Google search and social-media sharing.
+* Detailed content routes and publishing technology are not yet approved.
+* Videos should not automatically load in a way that harms website performance.
+* Client photos, videos and stories require appropriate permission.
+
+Likely future URL pattern — example only, not approved implementation:
+
+* `/fitness-hub`
+* `/fitness-hub/[slug]`
+
+### Architecture Standards
+
+* Each page route must be independently maintainable.
+* A page-specific change should not unintentionally affect another page.
+* Page-specific components must remain isolated by feature.
+* Header, footer, navigation, buttons and design primitives may be shared.
+* Shared components should be changed only when site-wide impact is intended.
+* Content and structured data should be separated from page layout where practical.
+* Testimonials, packages, contact information and Fitness Hub content should use structured typed data.
+* Avoid one large all-in-one page component.
+* Components should have one clear responsibility.
+* TypeScript types should be explicit.
+* Avoid any.
+* All routes must support mobile, tablet and desktop.
+* Images must be optimized and include meaningful alternative text.
+* Links and controls must be keyboard accessible.
+* Preserve the RavFitness black, white and gold design system.
+* Preserve the tagline Never Break The Chain.
+* No new package or dependency may be added without approval.
+* No detailed service routes are approved yet.
+* No website code should change until the page-by-page content map is approved.
+
+Suggested structure — proposed example, not yet an implementation instruction:
+
+```text
+app/
+  page.tsx
+  coaching/
+    page.tsx
+  fitness-hub/
+    page.tsx
+  about/
+    page.tsx
+  results/
+    page.tsx
+  book/
+    page.tsx
+
+components/
+  layout/
+  home/
+  coaching/
+  fitness-hub/
+  about/
+  results/
+  booking/
+  ui/
+
+data/
+  coaching.ts
+  testimonials.ts
+  fitness-content.ts
+  contact.ts
+
+types/
+  coaching.ts
+  testimonial.ts
+  fitness-content.ts
+```
+
+### Development Workflow
+
+For every Agile task:
+
+1. Define and approve the requirement.
+2. Update the Agile tracker.
+3. Create a dedicated Git branch.
+4. Change only files required for the approved task.
+5. Run lint.
+6. Run the production build.
+7. Test locally.
+8. Review the Git diff.
+9. Push the feature branch.
+10. Test the Vercel preview.
+11. Merge only after explicit approval.
+12. Test production.
+13. Mark the task Done.
+14. Record the commit and deployment result.
 
 No other website changes should begin until RF-001 is completed, tested and recorded.
 
