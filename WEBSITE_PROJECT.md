@@ -76,7 +76,7 @@ The website should clearly present RavFitness services, packages, offers, client
 | RF-003 | P0       | Foundation  | Review mobile, tablet and desktop layouts                      | Backlog |
 | RF-004 | P0       | Foundation  | Check image quality, loading and compression                   | Backlog |
 | RF-005 | P0       | Foundation  | Review accessibility and semantic structure                    | Backlog |
-| RF-006 | P0       | Foundation  | Define website information architecture and component boundaries | In Progress |
+| RF-006 | P0       | Foundation  | Define website information architecture and component boundaries | Review |
 | RF-007 | P1       | Booking     | Define the complimentary-session experience                    | Backlog |
 | RF-008 | P1       | Booking     | Select the initial booking system                              | Backlog |
 | RF-009 | P1       | Booking     | Build the complimentary-session booking page                   | Backlog |
@@ -114,6 +114,7 @@ The website should clearly present RavFitness services, packages, offers, client
 | RF-041 | P3       | Integration | Add Client Login when the fitness app is ready                 | Backlog |
 | RF-042 | P3       | Integration | Connect website onboarding with the fitness app                | Backlog |
 | RF-043 | P3       | Integration | Connect future app booking and payment features                | Backlog |
+| RF-044 | P1       | Home        | Build the conversion-focused Home page                         | Ready |
 
 ## Sprint 0 — Website Foundation
 
@@ -130,7 +131,7 @@ Create a clean, verified and reliable technical foundation without redesigning t
 | RF-003 | Review responsive layouts                | Backlog |
 | RF-004 | Check image performance                  | Backlog |
 | RF-005 | Review accessibility basics              | Backlog |
-| RF-006 | Define website information architecture and component boundaries | In Progress |
+| RF-006 | Define website information architecture and component boundaries | Review |
 
 ### Sprint 0 Definition of Done
 
@@ -196,7 +197,26 @@ Add client access and onboarding connections after the separate fitness app is r
 
 ## Current Next Task
 
-**RF-006 — Define website information architecture and component boundaries**
+**RF-044 — Build the conversion-focused Home page**
+
+### Approved Delivery Decision — Iterative Page-by-Page Design
+
+* We will not fully design every page before development.
+* We will finalise one page at a time immediately before building it.
+* Existing content will be reused and refined where practical.
+* Each page will go through requirement review, implementation, local testing, visual review, Vercel preview and production approval.
+* Unbuilt navigation routes must not be activated in production.
+* Coaching package details remain draft notes and are not locked.
+
+### RF-006 Review Checkpoint
+
+RF-006 is in Review because:
+
+* Primary navigation is approved.
+* Core routes are approved.
+* Home content map is approved.
+* Architecture and coding standards are documented.
+* AGENTS.md is established.
 
 ### Approved Website Navigation
 
@@ -366,7 +386,7 @@ Likely future URL pattern — example only, not approved implementation:
 * Preserve the tagline Never Break The Chain.
 * No new package or dependency may be added without approval.
 * No detailed service routes are approved yet.
-* No website code should change until the page-by-page content map is approved.
+* No website code should change for a page until that page’s content map is approved.
 
 Suggested structure — proposed example, not yet an implementation instruction:
 
@@ -435,3 +455,4 @@ Add one entry after every completed task.
 | ---------------- | ---------------- | --------- | --------- | ---------- |
 | 6 September 2026 | Project baseline | Completed | `6bc3736` | Ready      |
 | 7 September 2026 | RF-001 JSX lint fixes | Lint, build and local visual test passed | 373cc7b | Production Ready |
+| 7 September 2026 | RF-006 website architecture | Navigation, Home map, architecture standards and development workflow documented | a52cc91 | Pending merge |
