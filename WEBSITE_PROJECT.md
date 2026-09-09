@@ -76,7 +76,7 @@ The website should clearly present RavFitness services, packages, offers, client
 | RF-003 | P0       | Foundation  | Review mobile, tablet and desktop layouts                      | Backlog |
 | RF-004 | P0       | Foundation  | Check image quality, loading and compression                   | Backlog |
 | RF-005 | P0       | Foundation  | Review accessibility and semantic structure                    | Backlog |
-| RF-006 | P0       | Foundation  | Define website information architecture and component boundaries | Review |
+| RF-006 | P0       | Foundation  | Define website information architecture and component boundaries | Done |
 | RF-007 | P1       | Booking     | Define the complimentary-session experience                    | Backlog |
 | RF-008 | P1       | Booking     | Select the initial booking system                              | Backlog |
 | RF-009 | P1       | Booking     | Build the complimentary-session booking page                   | Backlog |
@@ -131,7 +131,7 @@ Create a clean, verified and reliable technical foundation without redesigning t
 | RF-003 | Review responsive layouts                | Backlog |
 | RF-004 | Check image performance                  | Backlog |
 | RF-005 | Review accessibility basics              | Backlog |
-| RF-006 | Define website information architecture and component boundaries | Review |
+| RF-006 | Define website information architecture and component boundaries | Done |
 
 ### Sprint 0 Definition of Done
 
@@ -455,4 +455,4 @@ Add one entry after every completed task.
 | ---------------- | ---------------- | --------- | --------- | ---------- |
 | 6 September 2026 | Project baseline | Completed | `6bc3736` | Ready      |
 | 7 September 2026 | RF-001 JSX lint fixes | Lint, build and local visual test passed | 373cc7b | Production Ready |
-| 7 September 2026 | RF-006 website architecture | Navigation, Home map, architecture standards and development workflow documented | a52cc91 | Pending merge |
+| 7 September 2026 | RF-006 website architecture | Navigation, Home map, architecture standards and workflow completed | 0f96d51 | Production Ready |
