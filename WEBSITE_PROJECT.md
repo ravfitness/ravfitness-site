@@ -114,7 +114,7 @@ The website should clearly present RavFitness services, packages, offers, client
 | RF-041 | P3       | Integration | Add Client Login when the fitness app is ready                 | Backlog |
 | RF-042 | P3       | Integration | Connect website onboarding with the fitness app                | Backlog |
 | RF-043 | P3       | Integration | Connect future app booking and payment features                | Backlog |
-| RF-044 | P1       | Home        | Build the conversion-focused Home page                         | Ready |
+| RF-044 | P1       | Home        | Build the conversion-focused Home page                         | In Progress |
 
 ## Sprint 0 — Website Foundation
 
@@ -198,6 +198,15 @@ Add client access and onboarding connections after the separate fitness app is r
 ## Current Next Task
 
 **RF-044 — Build the conversion-focused Home page**
+
+### RF-044 Stage 1 and Hero Media
+
+* Professional coaching photo and video are planned for this week.
+* Hero media selection is deferred and does not block the remaining Home-page work.
+* RF-044 Stage 1: Extract shared header and footer with no visible change — Completed.
+* Stage 1 validation: Lint, production build and local visual testing passed.
+* RF-044 overall status remains In Progress.
+* Next RF-044 activity — Stage 2: Build the responsive shared header and mobile navigation.
 
 ### Approved Delivery Decision — Iterative Page-by-Page Design
 
