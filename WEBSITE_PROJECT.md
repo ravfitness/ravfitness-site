@@ -206,7 +206,19 @@ Add client access and onboarding connections after the separate fitness app is r
 * RF-044 Stage 1: Extract shared header and footer with no visible change — Completed.
 * Stage 1 validation: Lint, production build and local visual testing passed.
 * RF-044 overall status remains In Progress.
-* Next RF-044 activity — Stage 2: Build the responsive shared header and mobile navigation.
+* RF-044 Stage 2: Build the responsive shared header and mobile navigation — Completed.
+* Stage 2 validation: Desktop navigation, hamburger menu, link selection, Escape close, focus behaviour and mobile layout passed on desktop and at 370px mobile width.
+* Known existing issue for the next Home stage: The current Hero content clips and overflows at mobile width and must be corrected during the shorter responsive Hero redesign.
+* Next RF-044 activity — Stage 3: Build the shorter responsive Home Hero using existing content while professional coaching media remains deferred.
+
+### RF-044 Stage 2 Approved Interim Navigation
+
+* Home -> #home
+* Coaching -> #services
+* About Ravi -> #about
+* Client Results -> #results
+* Book a Complimentary Session -> #contact
+* Fitness Hub must remain hidden until its route exists.
 
 ### Approved Delivery Decision — Iterative Page-by-Page Design
 
