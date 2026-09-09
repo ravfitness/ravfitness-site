@@ -1,0 +1,26 @@
+# RavFitness Development Instructions
+
+- Read README.md and WEBSITE_PROJECT.md before every task.
+- Work only on the approved Agile task.
+- Confirm the current branch and working-tree status before editing.
+- Use a dedicated feature or fix branch.
+- Never edit unrelated files.
+- Do not change approved wording, layout or business rules without permission.
+- Keep page routes and page-specific components isolated.
+- Reuse shared layout and UI components intentionally.
+- A shared component should be changed only when site-wide impact is intended.
+- Keep structured content separate from presentation where practical.
+- Use TypeScript and explicit types.
+- Avoid any.
+- Do not add or update dependencies without approval.
+- Preserve the RavFitness black, white and gold design system.
+- Preserve the tagline Never Break The Chain.
+- Build all pages for mobile, tablet and desktop.
+- Optimize images and use meaningful alternative text.
+- Keep controls keyboard accessible.
+- Run lint and production build after code changes.
+- Report every changed file and provide a concise diff summary.
+- Do not commit, push, merge or deploy without explicit approval.
+- Use a Vercel preview before merging into main.
+- Update WEBSITE_PROJECT.md as the task progresses.
+- Do not begin website implementation until the relevant content map is approved.
