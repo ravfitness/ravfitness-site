@@ -208,8 +208,16 @@ Add client access and onboarding connections after the separate fitness app is r
 * RF-044 overall status remains In Progress.
 * RF-044 Stage 2: Build the responsive shared header and mobile navigation — Completed.
 * Stage 2 validation: Desktop navigation, hamburger menu, link selection, Escape close, focus behaviour and mobile layout passed on desktop and at 370px mobile width.
-* Known existing issue for the next Home stage: The current Hero content clips and overflows at mobile width and must be corrected during the shorter responsive Hero redesign.
-* Next RF-044 activity — Stage 3: Build the shorter responsive Home Hero using existing content while professional coaching media remains deferred.
+* RF-044 Stage 3: Retain the production Hero with the approved CTA labels and focused mobile/tablet responsiveness fixes — Completed.
+* Stage 3 validation: Lint passed. Production build passed. Final local visual tests passed on desktop, 370×812 and 320×568.
+* The existing mobile Hero overflow and right-side clipping were fixed.
+* The production Hero design and transformation imagery were retained.
+* Mobile/tablet fixes allow natural text wrapping, stack CTAs on narrow screens, place the transformation panel below the text until the large breakpoint, and scale its images within the available width. Preserve the approved desktop appearance at large breakpoints.
+* The text-only Hero was rejected during visual review. The existing production Hero content, layout and visual styling are retained pending future coaching media.
+* Preserve the complete My Transformation before-and-after panel, images, captions and styling in the Hero.
+* Hero CTA labels: Book a Complimentary Session -> #contact; Explore Coaching -> #services. Existing CTA layout, styling and anchor destinations are preserved.
+* Professional coaching media will be added after Ravi creates it; the text-only Hero decision and planned removal of the transformation panel are superseded.
+* Next RF-044 activity — Stage 4: Quick Trust Strip and Coaching Preview.
 
 ### RF-044 Stage 2 Approved Interim Navigation
 
