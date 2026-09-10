@@ -115,6 +115,7 @@ The website should clearly present RavFitness services, packages, offers, client
 | RF-042 | P3       | Integration | Connect website onboarding with the fitness app                | Backlog |
 | RF-043 | P3       | Integration | Connect future app booking and payment features                | Backlog |
 | RF-044 | P1       | Home        | Build the conversion-focused Home page                         | In Progress |
+| RF-045 | P2       | Navigation  | Investigate fixed header temporarily disappearing on some mobile anchor jumps until slight scrolling | Ready |
 
 ## Sprint 0 — Website Foundation
 
@@ -208,7 +209,12 @@ Add client access and onboarding connections after the separate fitness app is r
 * RF-044 overall status remains In Progress.
 * RF-044 Stage 2: Build the responsive shared header and mobile navigation — Completed.
 * Stage 2 validation: Desktop navigation, hamburger menu, link selection, Escape close, focus behaviour and mobile layout passed on desktop and at 370px mobile width.
-* RF-044 Stage 3: Retain the production Hero with the approved CTA labels and focused mobile/tablet responsiveness fixes — Completed.
+* RF-044 Stage 3: Retain the production Hero with the approved CTA labels and focused mobile/tablet responsiveness fixes — Completed; Vercel preview passed with known non-blocking issue RF-045.
+* Stage 3 Vercel preview failure: At mobile width, Book a Complimentary Session navigated to #contact, but the fixed header/menu disappeared until a slight scroll.
+* The transform-gpu mitigation was tested and did not resolve the header visibility issue; it was removed.
+* Anchor navigation itself works and reaches the correct Contact section (#contact).
+* RF-045 is P2 / Ready and deferred for focused investigation: On some mobile anchor jumps, the fixed header is temporarily not visible until slight scrolling. The exact cause remains unresolved.
+* RF-044 Stages 1–3 are approved for merge preparation with this known non-blocking issue; overall RF-044 remains In Progress and Stage 4 remains the next development stage.
 * Stage 3 validation: Lint passed. Production build passed. Final local visual tests passed on desktop, 370×812 and 320×568.
 * The existing mobile Hero overflow and right-side clipping were fixed.
 * The production Hero design and transformation imagery were retained.
