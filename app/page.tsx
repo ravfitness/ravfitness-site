@@ -1,61 +1,12 @@
+import SiteHeader from "../components/layout/SiteHeader";
+import SiteFooter from "../components/layout/SiteFooter";
 import Image from "next/image";
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white text-gray-900 flex flex-col">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 w-full h-14 md:h-16 shadow-md bg-black/95 backdrop-blur z-50">
-
-
-        <div className="max-w-6xl mx-auto px-6 h-full flex justify-between items-center">
-          {/* Logo + Tagline */}
-          <div className="flex items-center gap-3">
-            {/* RF Logo (Gold) */}
-            <div className="flex h-10 w-10 items-center justify-center rounded-md border border-[#f5b533] text-[#f5b533] font-extrabold text-lg tracking-tight">
-              RF
-            </div>
-
-            {/* Brand Text */}
-            <div className="flex flex-col leading-tight">
-              <span className="text-base font-semibold text-white">
-                Rav<span className="text-[#f5b533]"> Fitness</span>
-              </span>
-              <span className="text-[10px] uppercase tracking-[0.22em] text-[#f5b533]">
-                Never Break The Chain
-              </span>
-            </div>
-          </div>
-
-          {/* Navigation + CTA */}
-          <div className="flex items-center gap-6">
-            <nav className="hidden md:flex space-x-6 text-sm font-medium">
-              <a href="#home" className="text-white hover:text-[#f5b533]">
-                Home
-              </a>
-              <a href="#services" className="text-white hover:text-[#f5b533]">
-                Services
-              </a>
-              <a href="#about" className="text-white hover:text-[#f5b533]">
-                About
-              </a>
-              <a href="#results" className="text-white hover:text-[#f5b533]">
-                Results
-              </a>
-              <a href="#contact" className="text-white hover:text-[#f5b533]">
-                Contact
-              </a>
-            </nav>
-
-            {/* TOP RIGHT button */}
-            <a
-              href="#contact"
-              className="hidden md:inline-block px-4 py-2 rounded-xl text-sm font-semibold bg-[#f5b533] text-black hover:brightness-110 shadow"
-            >
-              Book a Free Consultation
-            </a>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main className="flex-1 pt-14 md:pt-16">
 
@@ -70,7 +21,7 @@ export default function HomePage() {
           <div className="pointer-events-none absolute inset-x-0 -top-24 h-56 bg-gradient-to-b from-[#ffe9a8]/70 via-transparent to-transparent" />
 
 
-          <div className="relative z-10 max-w-6xl mx-auto px-6 pt-10 pb-8 md:pt-12 md:pb-10 grid md:grid-cols-2 gap-10 items-center w-full">
+          <div className="relative z-10 max-w-6xl mx-auto px-6 pt-10 pb-8 md:pt-12 md:pb-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center w-full">
 
 
 
@@ -84,7 +35,7 @@ export default function HomePage() {
 
 
             {/* LEFT – TEXT / HOOK */}
-            <div className="max-w-xl">
+            <div className="min-w-0 max-w-xl break-words">
               <p className="uppercase tracking-[0.22em] text-[11px] text-gray-500 mb-3">
                 Glen Iris • Melbourne • Personal Trainer
               </p>
@@ -94,11 +45,11 @@ export default function HomePage() {
 
               {/* Visual headline (keep your dramatic styling) */}
               <h2 className="text-[1.9rem] md:text-[2.4rem] font-extrabold leading-tight text-gray-900 mb-6">
-                <span className="block whitespace-nowrap">
+                <span className="block whitespace-normal lg:whitespace-nowrap">
                   Get <span className="text-[#f5b533]">Stronger.</span> Move{" "}
                   <span className="text-[#f5b533]">Better.</span>
                 </span>
-                <span className="block whitespace-nowrap">
+                <span className="block whitespace-normal lg:whitespace-nowrap">
                   Feel Like{" "}
                   <span className="underline decoration-[#f5b533] underline-offset-4">
                     Yourself
@@ -151,18 +102,18 @@ export default function HomePage() {
 
 
               {/* CTA Row */}
-              <div className="flex flex-wrap gap-3 mt-1 md:mt-2 mb-3">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-1 md:mt-2 mb-3">
                 <a
                   href="#contact"
-                  className="px-6 py-3 rounded-2xl text-sm font-semibold bg-[#f5b533] text-black shadow-[0_14px_40px_rgba(245,181,51,0.45)] hover:brightness-110 transition"
+                  className="min-w-0 w-full sm:w-auto text-center lg:text-left px-6 py-3 rounded-2xl text-sm font-semibold bg-[#f5b533] text-black shadow-[0_14px_40px_rgba(245,181,51,0.45)] hover:brightness-110 transition"
                 >
-                  Book a Free Consultation
+                  Book a Complimentary Session
                 </a>
                 <a
                   href="#services"
-                  className="px-6 py-3 rounded-2xl text-sm font-semibold border border-gray-300 hover:bg-gray-50 transition"
+                  className="min-w-0 w-full sm:w-auto text-center lg:text-left px-6 py-3 rounded-2xl text-sm font-semibold border border-gray-300 hover:bg-gray-50 transition"
                 >
-                  View Training Options
+                  Explore Coaching
                 </a>
               </div>
 
@@ -174,7 +125,7 @@ export default function HomePage() {
             </div>
 
             {/* RIGHT – TRANSFORMATION CARD */}
-            <div className="w-full max-w-[480px] mx-auto md:mx-0 md:mt-0 md:ml-auto relative">
+            <div className="min-w-0 w-full max-w-[480px] mx-auto lg:mx-0 lg:mt-0 lg:ml-auto relative">
 
 
               {/* Glowing background halo */}
@@ -188,10 +139,10 @@ export default function HomePage() {
                     My Transformation
                   </p>
 
-                  <div className="grid grid-cols-[1fr_1.4fr] gap-6 items-start">
+                  <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] gap-2 sm:gap-6 items-start">
                     {/* BEFORE */}
-                    <div className="rounded-2xl overflow-hidden bg-black border border-neutral-700 flex flex-col p-3">
-                      <div className="relative h-[260px] w-full overflow-hidden rounded-xl">
+                    <div className="rounded-2xl overflow-hidden bg-black border border-neutral-700 min-w-0 flex flex-col p-2 sm:p-3">
+                      <div className="relative h-[clamp(140px,54vw,260px)] lg:h-[260px] w-full overflow-hidden rounded-xl">
                         <Image
                           src="/images/rav-before-v2.jpg"
                           alt="Rav before starting his transformation"
@@ -206,15 +157,15 @@ export default function HomePage() {
                     </div>
 
                     {/* AFTER */}
-                    {/*<div className="rounded-2xl overflow-hidden bg-black border border-[#f5b533] flex flex-col p-3">*/}
-                    <div className="relative rounded-2xl overflow-hidden bg-black border border-[#f5b533] flex flex-col p-3
+                    {/*<div className="rounded-2xl overflow-hidden bg-black border border-[#f5b533] min-w-0 flex flex-col p-2 sm:p-3">*/}
+                    <div className="relative rounded-2xl overflow-hidden bg-black border border-[#f5b533] min-w-0 flex flex-col p-2 sm:p-3
   -translate-y-1 md:-translate-y-2 z-10
   shadow-[0_20px_60px_rgba(0,0,0,0.55)]
 ">
                       <div className="pointer-events-none absolute -inset-6 rounded-[28px] bg-[#f5b533]/25 blur-2xl" />
 
 
-                      <div className="relative h-[260px] w-full overflow-hidden rounded-xl">
+                      <div className="relative h-[clamp(140px,54vw,260px)] lg:h-[260px] w-full overflow-hidden rounded-xl">
                         <Image
                           src="/images/rav-after-v2.jpg"
                           alt="Rav after transforming his body and mindset"
@@ -744,9 +695,7 @@ export default function HomePage() {
       </main>
 
       {/* FOOTER – BLACK */}
-      <footer className="bg-black border-t border-neutral-900 text-center py-6 text-xs text-gray-400 mt-0">
-        © {new Date().getFullYear()} Rav Fitness. All rights reserved.
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

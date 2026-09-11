@@ -114,7 +114,8 @@ The website should clearly present RavFitness services, packages, offers, client
 | RF-041 | P3       | Integration | Add Client Login when the fitness app is ready                 | Backlog |
 | RF-042 | P3       | Integration | Connect website onboarding with the fitness app                | Backlog |
 | RF-043 | P3       | Integration | Connect future app booking and payment features                | Backlog |
-| RF-044 | P1       | Home        | Build the conversion-focused Home page                         | Ready |
+| RF-044 | P1       | Home        | Build the conversion-focused Home page                         | In Progress |
+| RF-045 | P2       | Navigation  | Investigate fixed header temporarily disappearing on some mobile anchor jumps until slight scrolling | Ready |
 
 ## Sprint 0 — Website Foundation
 
@@ -198,6 +199,40 @@ Add client access and onboarding connections after the separate fitness app is r
 ## Current Next Task
 
 **RF-044 — Build the conversion-focused Home page**
+
+### RF-044 Stage 1 and Hero Media
+
+* Professional coaching photo and video are planned for this week.
+* Hero media selection is deferred and does not block the remaining Home-page work.
+* RF-044 Stage 1: Extract shared header and footer with no visible change — Completed.
+* Stage 1 validation: Lint, production build and local visual testing passed.
+* RF-044 overall status remains In Progress.
+* RF-044 Stage 2: Build the responsive shared header and mobile navigation — Completed.
+* Stage 2 validation: Desktop navigation, hamburger menu, link selection, Escape close, focus behaviour and mobile layout passed on desktop and at 370px mobile width.
+* RF-044 Stage 3: Retain the production Hero with the approved CTA labels and focused mobile/tablet responsiveness fixes — Completed; Vercel preview passed with known non-blocking issue RF-045.
+* Stage 3 Vercel preview failure: At mobile width, Book a Complimentary Session navigated to #contact, but the fixed header/menu disappeared until a slight scroll.
+* The transform-gpu mitigation was tested and did not resolve the header visibility issue; it was removed.
+* Anchor navigation itself works and reaches the correct Contact section (#contact).
+* RF-045 is P2 / Ready and deferred for focused investigation: On some mobile anchor jumps, the fixed header is temporarily not visible until slight scrolling. The exact cause remains unresolved.
+* RF-044 Stages 1–3 are approved for merge preparation with this known non-blocking issue; overall RF-044 remains In Progress and Stage 4 remains the next development stage.
+* Stage 3 validation: Lint passed. Production build passed. Final local visual tests passed on desktop, 370×812 and 320×568.
+* The existing mobile Hero overflow and right-side clipping were fixed.
+* The production Hero design and transformation imagery were retained.
+* Mobile/tablet fixes allow natural text wrapping, stack CTAs on narrow screens, place the transformation panel below the text until the large breakpoint, and scale its images within the available width. Preserve the approved desktop appearance at large breakpoints.
+* The text-only Hero was rejected during visual review. The existing production Hero content, layout and visual styling are retained pending future coaching media.
+* Preserve the complete My Transformation before-and-after panel, images, captions and styling in the Hero.
+* Hero CTA labels: Book a Complimentary Session -> #contact; Explore Coaching -> #services. Existing CTA layout, styling and anchor destinations are preserved.
+* Professional coaching media will be added after Ravi creates it; the text-only Hero decision and planned removal of the transformation panel are superseded.
+* Next RF-044 activity — Stage 4: Quick Trust Strip and Coaching Preview.
+
+### RF-044 Stage 2 Approved Interim Navigation
+
+* Home -> #home
+* Coaching -> #services
+* About Ravi -> #about
+* Client Results -> #results
+* Book a Complimentary Session -> #contact
+* Fitness Hub must remain hidden until its route exists.
 
 ### Approved Delivery Decision — Iterative Page-by-Page Design
 
