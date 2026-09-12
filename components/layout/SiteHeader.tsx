@@ -1,12 +1,13 @@
 ﻿"use client";
 
 import { useRef, useState } from "react";
+import Link from "next/link";
 
 const navigation: ReadonlyArray<{ label: string; href: string }> = [
-  { label: "Home", href: "#home" },
-  { label: "Coaching", href: "#services" },
-  { label: "About Ravi", href: "#about" },
-  { label: "Client Results", href: "#results" },
+  { label: "Home", href: "/" },
+  { label: "Coaching", href: "/coaching" },
+  { label: "About Ravi", href: "/#about" },
+  { label: "Client Results", href: "/#results" },
 ];
 
 export default function SiteHeader() {
@@ -24,8 +25,8 @@ export default function SiteHeader() {
       }}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-full flex justify-between items-center gap-3">
-        <a
-          href="#home"
+        <Link
+          href="/"
           onClick={() => setMenuOpen(false)}
           className="flex min-w-0 min-h-11 items-center gap-2 sm:gap-3 rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5b533]"
         >
@@ -40,17 +41,17 @@ export default function SiteHeader() {
               Never Break The Chain
             </span>
           </div>
-        </a>
+        </Link>
 
         <nav aria-label="Primary navigation" className="hidden lg:flex shrink-0 items-center gap-4 text-sm font-medium">
           {navigation.map(({ label, href }) => (
-            <a key={href} href={href} className="inline-flex min-h-11 items-center rounded-md px-1 text-white hover:text-[#f5b533] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5b533]">
+            <Link key={href} href={href} className="inline-flex min-h-11 items-center rounded-md px-1 text-white hover:text-[#f5b533] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5b533]">
               {label}
-            </a>
+            </Link>
           ))}
-          <a href="#contact" className="inline-flex min-h-11 items-center justify-center px-4 py-2 rounded-xl text-sm font-semibold bg-[#f5b533] text-black hover:brightness-110 shadow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5b533]">
+          <Link href="/#contact" className="inline-flex min-h-11 items-center justify-center px-4 py-2 rounded-xl text-sm font-semibold bg-[#f5b533] text-black hover:brightness-110 shadow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5b533]">
             Book a Complimentary Session
-          </a>
+          </Link>
         </nav>
 
         <button
@@ -77,15 +78,15 @@ export default function SiteHeader() {
         <ul className="flex min-w-0 flex-col gap-1 text-sm font-medium">
           {navigation.map(({ label, href }) => (
             <li key={href}>
-              <a href={href} onClick={() => setMenuOpen(false)} className="flex min-h-11 items-center rounded-md px-3 py-3 text-white hover:bg-neutral-900 hover:text-[#f5b533] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5b533]">
+              <Link href={href} onClick={() => setMenuOpen(false)} className="flex min-h-11 items-center rounded-md px-3 py-3 text-white hover:bg-neutral-900 hover:text-[#f5b533] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5b533]">
                 {label}
-              </a>
+              </Link>
             </li>
           ))}
           <li className="mt-2">
-            <a href="#contact" onClick={() => setMenuOpen(false)} className="flex min-h-11 items-center justify-center rounded-xl bg-[#f5b533] px-3 py-3 text-center font-semibold text-black hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5b533]">
+            <Link href="/#contact" onClick={() => setMenuOpen(false)} className="flex min-h-11 items-center justify-center rounded-xl bg-[#f5b533] px-3 py-3 text-center font-semibold text-black hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5b533]">
               Book a Complimentary Session
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

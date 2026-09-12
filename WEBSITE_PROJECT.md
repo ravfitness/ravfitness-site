@@ -116,6 +116,7 @@ The website should clearly present RavFitness services, packages, offers, client
 | RF-043 | P3       | Integration | Connect future app booking and payment features                | Backlog |
 | RF-044 | P1       | Home        | Build the conversion-focused Home page                         | In Progress |
 | RF-045 | P2       | Navigation  | Investigate fixed header temporarily disappearing on some mobile anchor jumps until slight scrolling | Ready |
+| RF-046 | P1       | Coaching    | Build the independent Coaching page                            | Review |
 
 ## Sprint 0 — Website Foundation
 
@@ -198,7 +199,30 @@ Add client access and onboarding connections after the separate fitness app is r
 
 ## Current Next Task
 
-**RF-044 — Build the conversion-focused Home page**
+**RF-046 — Build the independent Coaching page**
+
+### RF-046 Approved Coaching Page Implementation
+
+* RF-046 is in Review on feature/rf-046-coaching-page, pending Vercel preview and production verification.
+* Production verification passed for RF-044 Stages 1–3 merge commit 90ed8ee, as confirmed by Ravi.
+* RF-044 Home refinement remains In Progress but is paused while destination pages are built. Stage 4 — Quick Trust Strip and Coaching Preview — remains its next stage.
+* Approved route: /coaching, using the existing SiteHeader and SiteFooter.
+* The expanded eight-section RF-046 design was rejected during local visual review, including the large black introduction and additional coaching sections.
+* Approved first version: Extract the existing Home Coaching/Services section into components/coaching/CoachingServices.tsx and render the same component in its original Home location and between SiteHeader and SiteFooter on /coaching.
+* Preserve the existing section's headings, wording, cards, classes, responsive behaviour and destinations exactly. It contains no CTA links. This extraction preserves the existing Small Group Training / 3–6 People copy; the earlier business facts below are deferred copy guidance, not changes approved for this first version.
+* The rejected expanded page content and unused app/coaching/content.ts have been removed.
+* Local visual testing passed on desktop and responsive testing passed at 320×568, as confirmed by Ravi.
+* Cards stack correctly with no clipping or horizontal overflow. Header, navigation, scrolling and footer passed local testing.
+* This first version intentionally reuses the existing Home Coaching section; detailed content refinement remains future work.
+* Earlier business facts retained for a future approved copy revision:
+* Coaching focuses on strength, movement, energy, confidence, consistency and sustainable progress at Goodlife Health Clubs Glen Iris, Melbourne.
+* One-to-One Personal Training is the primary in-person service. Partner & Semi-Private Coaching is for 2–3 people maximum: partners, friends or appropriately matched people, not a large group exercise class.
+* Online Coaching includes an individual program, progress tracking, accountability and a weekly connection/check-in. Clients may transition online after a 6- or 12-week in-person foundation.
+* Training may use 1, 2 or 3 sessions per week, a 6-week foundation, 12-week development period, ongoing coaching, program design and technique guidance, or progress reviews. Recommend the appropriate option after a complimentary session and assessment.
+* No prices, negotiable pricing, guaranteed results or unverified claims. Use complimentary session and Partner & Semi-Private Coaching terminology.
+* Shared navigation now uses Home /, Coaching /coaching, About Ravi /#about, Client Results /#results and Book a Complimentary Session /#contact. This supersedes the Stage 2 interim destinations below; Fitness Hub remains absent.
+* Home Hero Explore Coaching links to /coaching; all other Home content and styling remain unchanged during extraction. The shared header booking CTA uses /#contact.
+* RF-045 remains deferred. Vercel preview, production approval and production verification are pending for RF-046.
 
 ### RF-044 Stage 1 and Hero Media
 
