@@ -117,7 +117,8 @@ The website should clearly present RavFitness services, packages, offers, client
 | RF-044 | P1       | Home        | Build the conversion-focused Home page                         | In Progress |
 | RF-045 | P2       | Navigation  | Investigate fixed header temporarily disappearing on some mobile anchor jumps until slight scrolling | Ready |
 | RF-046 | P1       | Coaching    | Build the independent Coaching page                            | Done |
-| RF-047 | P2       | Fitness Hub | Build the Fitness Hub foundation                               | Review |
+| RF-047 | P2       | Fitness Hub | Build the Fitness Hub foundation                               | Done |
+| RF-048 | P2       | About Ravi  | About Ravi page foundation                                     | Review |
 
 ## Sprint 0 — Website Foundation
 
@@ -200,11 +201,23 @@ Add client access and onboarding connections after the separate fitness app is r
 
 ## Current Next Task
 
-**RF-047 — Build the Fitness Hub foundation**
+**RF-048 — About Ravi page foundation**
+
+### RF-048 Approved About Ravi Page Foundation
+
+* RF-048 is in Review on feature/rf-048-about-ravi-page. Vercel preview and production verification remain pending.
+* Extract the complete existing Home About section into components/about/AboutRavi.tsx without changing content, headings, structure, styling or the about section ID.
+* Home renders AboutRavi in its original position. The /about route contains only SiteHeader, the extracted AboutRavi component and SiteFooter within the standard page wrapper.
+* Shared navigation destinations: brand and Home /, Coaching /coaching, Fitness Hub /fitness-hub, About Ravi /about, Client Results /#results and Book a Complimentary Session /#contact.
+* No new content, media, dependencies or animations. RF-045 remains deferred; Client Results and Home refinement are not part of this task.
+* Validation passed: extracted About section exactly matches the committed Home section after normalizing line endings; both Home and /about render AboutRavi. Home is unchanged beyond the import and replacement in its original position. Lint, production build and git diff --check passed.
+* Local visual and interaction testing passed on desktop and 320px mobile, as confirmed by Ravi. The /about and Home About content and styling matched.
+* Navigation, mobile-menu closing, scrolling, footer and overflow checks passed. /#about still reaches the Home About section.
+* Local-test checkpoint approved for commit and push. The development server has been stopped. RF-048 is not Done.
 
 ### RF-047 Approved Fitness Hub Foundation
 
-* RF-047 is in Review on feature/rf-047-fitness-hub, pending Vercel preview and production verification.
+* RF-047 is Done. Merged to main at b507085 (b507085da286e278863c8baba0028ecae1d0c3ad); production verification passed, as confirmed by Ravi.
 * Approved route: /fitness-hub, using SiteHeader and SiteFooter with a concise introduction and exactly two responsive Coming Soon cards.
 * Approved heading: Real Training. Real Progress. Introduction: Practical training, movement skills and real coaching progress from RavFitness.
 * Original video files are being retrieved. Ravi has permission to publish the client video.
@@ -215,7 +228,7 @@ Add client access and onboarding connections after the separate fitness app is r
 * Validation passed: lint and production build; browser checks at 320×568 and widths 768, 1024, 1280 and 1440 confirmed one H1, exactly two cards, mobile stacking and no horizontal overflow. Desktop navigation fits without overlapping the brand; all six mobile links reach their destinations and close the menu.
 * Desktop visual testing passed and the page design is approved by Ravi. Responsive browser checks passed at 320, 768, 1024, 1280 and 1440px; navigation, mobile-menu behaviour, CTAs and no-overflow checks passed.
 * Original videos will replace the Coming Soon status after preparation and optimisation. No video files are included in this foundation checkpoint.
-* Local checkpoint approved for commit and push. The development server has been stopped.
+* Foundation committed and merged; production checkpoint complete. Original videos remain future work after preparation and optimisation.
 
 ### RF-046 Approved Coaching Page Implementation
 
@@ -532,3 +545,4 @@ Add one entry after every completed task.
 | 7 September 2026 | RF-001 JSX lint fixes | Lint, build and local visual test passed | 373cc7b | Production Ready |
 | 7 September 2026 | RF-006 website architecture | Navigation, Home map, architecture standards and workflow completed | 0f96d51 | Production Ready |
 | 14 September 2026 | RF-046 Coaching page foundation | Preview and production verification passed, confirmed by Ravi; Done | db79c43 | Production verified |
+| 14 September 2026 | RF-047 Fitness Hub foundation | Production verification passed, confirmed by Ravi; Done | b507085 | Production verified |
