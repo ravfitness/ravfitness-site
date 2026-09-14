@@ -118,7 +118,8 @@ The website should clearly present RavFitness services, packages, offers, client
 | RF-045 | P2       | Navigation  | Investigate fixed header temporarily disappearing on some mobile anchor jumps until slight scrolling | Ready |
 | RF-046 | P1       | Coaching    | Build the independent Coaching page                            | Done |
 | RF-047 | P2       | Fitness Hub | Build the Fitness Hub foundation                               | Done |
-| RF-048 | P2       | About Ravi  | About Ravi page foundation                                     | Review |
+| RF-048 | P2       | About Ravi  | About Ravi page foundation                                     | Done |
+| RF-049 | P2       | Results     | Client Results page foundation                                 | Review |
 
 ## Sprint 0 — Website Foundation
 
@@ -201,11 +202,23 @@ Add client access and onboarding connections after the separate fitness app is r
 
 ## Current Next Task
 
-**RF-048 — About Ravi page foundation**
+**RF-049 — Client Results page foundation**
+
+### RF-049 Approved Client Results Page Foundation
+
+* RF-049 is in Review on feature/rf-049-client-results-page. Vercel preview and production verification remain pending.
+* Extract the complete Home Client Results/testimonials section into components/results/ClientResults.tsx, preserving all three testimonials, Anthea's image, names, descriptions, result labels, training durations, heading, introduction, results section ID, JSX structure and styling exactly.
+* Home renders ClientResults in its original position. The /results route contains only SiteHeader, ClientResults and SiteFooter within the standard page wrapper.
+* Shared navigation destinations: brand and Home /, Coaching /coaching, Fitness Hub /fitness-hub, About Ravi /about, Client Results /results and Book a Complimentary Session /#contact.
+* Preserve /#results as the Home section anchor. No new content, imagery, dependencies, pricing or functionality. Booking and Home refinement are outside this task; RF-045 remains deferred.
+* Validation passed: ClientResults matches the committed Home section exactly after normalizing line endings; Home and /results both render the shared component. Home is unchanged beyond the import and replacement in its original position. The results section ID is retained for /#results. Lint, production build and git diff --check passed.
+* Local desktop and 320px mobile testing passed, as confirmed by Ravi. /results and Home display the matching Client Results section; all testimonials and Anthea's image were verified.
+* Card stacking, navigation, mobile-menu closing, scrolling, footer and overflow checks passed. /#results still reaches the Home testimonials.
+* Local-test checkpoint approved for commit and push. The development server has been stopped. RF-049 is not Done.
 
 ### RF-048 Approved About Ravi Page Foundation
 
-* RF-048 is in Review on feature/rf-048-about-ravi-page. Vercel preview and production verification remain pending.
+* RF-048 is Done. Merged to main at 91a4640 (91a4640631e329f5af8da9fca85bdc0cb96538e2); production verification passed, as confirmed by Ravi.
 * Extract the complete existing Home About section into components/about/AboutRavi.tsx without changing content, headings, structure, styling or the about section ID.
 * Home renders AboutRavi in its original position. The /about route contains only SiteHeader, the extracted AboutRavi component and SiteFooter within the standard page wrapper.
 * Shared navigation destinations: brand and Home /, Coaching /coaching, Fitness Hub /fitness-hub, About Ravi /about, Client Results /#results and Book a Complimentary Session /#contact.
@@ -213,7 +226,7 @@ Add client access and onboarding connections after the separate fitness app is r
 * Validation passed: extracted About section exactly matches the committed Home section after normalizing line endings; both Home and /about render AboutRavi. Home is unchanged beyond the import and replacement in its original position. Lint, production build and git diff --check passed.
 * Local visual and interaction testing passed on desktop and 320px mobile, as confirmed by Ravi. The /about and Home About content and styling matched.
 * Navigation, mobile-menu closing, scrolling, footer and overflow checks passed. /#about still reaches the Home About section.
-* Local-test checkpoint approved for commit and push. The development server has been stopped. RF-048 is not Done.
+* Foundation committed and merged; RF-048 production checkpoint complete.
 
 ### RF-047 Approved Fitness Hub Foundation
 
@@ -546,3 +559,4 @@ Add one entry after every completed task.
 | 7 September 2026 | RF-006 website architecture | Navigation, Home map, architecture standards and workflow completed | 0f96d51 | Production Ready |
 | 14 September 2026 | RF-046 Coaching page foundation | Preview and production verification passed, confirmed by Ravi; Done | db79c43 | Production verified |
 | 14 September 2026 | RF-047 Fitness Hub foundation | Production verification passed, confirmed by Ravi; Done | b507085 | Production verified |
+| 14 September 2026 | RF-048 About Ravi page foundation | Production verification passed, confirmed by Ravi; Done | 91a4640 | Production verified |
