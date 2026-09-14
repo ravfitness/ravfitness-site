@@ -7,7 +7,7 @@ const navigation: ReadonlyArray<{ label: string; href: string }> = [
   { label: "Home", href: "/" },
   { label: "Coaching", href: "/coaching" },
   { label: "Fitness Hub", href: "/fitness-hub" },
-  { label: "About Ravi", href: "/#about" },
+  { label: "About Ravi", href: "/about" },
   { label: "Client Results", href: "/#results" },
 ];
 
