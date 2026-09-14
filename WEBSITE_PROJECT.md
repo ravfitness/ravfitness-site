@@ -116,7 +116,8 @@ The website should clearly present RavFitness services, packages, offers, client
 | RF-043 | P3       | Integration | Connect future app booking and payment features                | Backlog |
 | RF-044 | P1       | Home        | Build the conversion-focused Home page                         | In Progress |
 | RF-045 | P2       | Navigation  | Investigate fixed header temporarily disappearing on some mobile anchor jumps until slight scrolling | Ready |
-| RF-046 | P1       | Coaching    | Build the independent Coaching page                            | Review |
+| RF-046 | P1       | Coaching    | Build the independent Coaching page                            | Done |
+| RF-047 | P2       | Fitness Hub | Build the Fitness Hub foundation                               | Review |
 
 ## Sprint 0 — Website Foundation
 
@@ -199,11 +200,26 @@ Add client access and onboarding connections after the separate fitness app is r
 
 ## Current Next Task
 
-**RF-046 — Build the independent Coaching page**
+**RF-047 — Build the Fitness Hub foundation**
+
+### RF-047 Approved Fitness Hub Foundation
+
+* RF-047 is in Review on feature/rf-047-fitness-hub, pending Vercel preview and production verification.
+* Approved route: /fitness-hub, using SiteHeader and SiteFooter with a concise introduction and exactly two responsive Coming Soon cards.
+* Approved heading: Real Training. Real Progress. Introduction: Practical training, movement skills and real coaching progress from RavFitness.
+* Original video files are being retrieved. Ravi has permission to publish the client video.
+* First planned videos: My Muscle-Up Journey and Client Muscle-Up Success.
+* The page uses Video Coming Soon cards until the original videos are prepared and optimised; no video files, embeds or thumbnails are included.
+* Shared navigation order: Home /, Coaching /coaching, Fitness Hub /fitness-hub, About Ravi /#about, Client Results /#results and Book a Complimentary Session /#contact.
+* Page CTAs: Explore Coaching /coaching and Book a Complimentary Session /#contact.
+* Validation passed: lint and production build; browser checks at 320×568 and widths 768, 1024, 1280 and 1440 confirmed one H1, exactly two cards, mobile stacking and no horizontal overflow. Desktop navigation fits without overlapping the brand; all six mobile links reach their destinations and close the menu.
+* Desktop visual testing passed and the page design is approved by Ravi. Responsive browser checks passed at 320, 768, 1024, 1280 and 1440px; navigation, mobile-menu behaviour, CTAs and no-overflow checks passed.
+* Original videos will replace the Coming Soon status after preparation and optimisation. No video files are included in this foundation checkpoint.
+* Local checkpoint approved for commit and push. The development server has been stopped.
 
 ### RF-046 Approved Coaching Page Implementation
 
-* RF-046 is in Review on feature/rf-046-coaching-page, pending Vercel preview and production verification.
+* RF-046 is Done. Preview and production verification passed, as confirmed by Ravi, for merge commit db79c43 (db79c43d108272207658a4ebdafff6b5214519a7), merged to main and pushed to origin.
 * Production verification passed for RF-044 Stages 1–3 merge commit 90ed8ee, as confirmed by Ravi.
 * RF-044 Home refinement remains In Progress but is paused while destination pages are built. Stage 4 — Quick Trust Strip and Coaching Preview — remains its next stage.
 * Approved route: /coaching, using the existing SiteHeader and SiteFooter.
@@ -222,7 +238,7 @@ Add client access and onboarding connections after the separate fitness app is r
 * No prices, negotiable pricing, guaranteed results or unverified claims. Use complimentary session and Partner & Semi-Private Coaching terminology.
 * Shared navigation now uses Home /, Coaching /coaching, About Ravi /#about, Client Results /#results and Book a Complimentary Session /#contact. This supersedes the Stage 2 interim destinations below; Fitness Hub remains absent.
 * Home Hero Explore Coaching links to /coaching; all other Home content and styling remain unchanged during extraction. The shared header booking CTA uses /#contact.
-* RF-045 remains deferred. Vercel preview, production approval and production verification are pending for RF-046.
+* RF-045 remains deferred. RF-046 production verification passed.
 
 ### RF-044 Stage 1 and Hero Media
 
@@ -515,3 +531,4 @@ Add one entry after every completed task.
 | 6 September 2026 | Project baseline | Completed | `6bc3736` | Ready      |
 | 7 September 2026 | RF-001 JSX lint fixes | Lint, build and local visual test passed | 373cc7b | Production Ready |
 | 7 September 2026 | RF-006 website architecture | Navigation, Home map, architecture standards and workflow completed | 0f96d51 | Production Ready |
+| 14 September 2026 | RF-046 Coaching page foundation | Preview and production verification passed, confirmed by Ravi; Done | db79c43 | Production verified |
