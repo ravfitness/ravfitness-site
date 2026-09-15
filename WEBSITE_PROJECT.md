@@ -119,7 +119,8 @@ The website should clearly present RavFitness services, packages, offers, client
 | RF-046 | P1       | Coaching    | Build the independent Coaching page                            | Done |
 | RF-047 | P2       | Fitness Hub | Build the Fitness Hub foundation                               | Done |
 | RF-048 | P2       | About Ravi  | About Ravi page foundation                                     | Done |
-| RF-049 | P2       | Results     | Client Results page foundation                                 | Review |
+| RF-049 | P2       | Results     | Client Results page foundation                                 | Done |
+| RF-050 | P1       | Booking     | Book a Complimentary Session page foundation                   | Review |
 
 ## Sprint 0 — Website Foundation
 
@@ -202,11 +203,28 @@ Add client access and onboarding connections after the separate fitness app is r
 
 ## Current Next Task
 
-**RF-049 — Client Results page foundation**
+**RF-050 — Book a Complimentary Session page foundation**
+
+### RF-050 Approved Book a Complimentary Session Page Foundation
+
+* RF-050 is in Review on feature/rf-050-book-session-page. Email Enquiry testing, Vercel preview and production verification remain pending.
+* Extract the complete existing Home contact section into components/contact/BookSession.tsx, preserving all headings, text, enquiry actions, contact and location information, JSX structure, styling classes and contact section ID exactly.
+* Home renders BookSession in its original position after ClientResults. The /book route contains only SiteHeader, BookSession and SiteFooter within the standard page wrapper.
+* Update booking CTAs in the Home Hero, shared desktop/mobile header and Fitness Hub to /book. The shared Coaching section contains no booking CTA; its page uses the shared header.
+* Current shared navigation: brand and Home /, Coaching /coaching, Fitness Hub /fitness-hub, About Ravi /about, Client Results /results and Book a Complimentary Session /book. These destinations supersede earlier checkpoint destinations below.
+* Preserve /#contact for backward compatibility. Contact actions and all non-booking links remain unchanged.
+* No booking form, calendar, payments, scheduling service, content redesign, new media or dependencies. Home refinement remains paused and RF-045 remains deferred.
+* Validation passed: BookSession matches the committed Home contact section exactly after normalizing line endings; Home retains its original position and both Home and /book render BookSession. Generated Home HTML retains id="contact" for /#contact. All four booking CTA instances use /book; contact actions, non-booking links and other content are unchanged. Lint, production build and git diff --check passed. Desktop and 320px mobile visual testing passed, as confirmed by Ravi. /book and the Home contact section matched.
+
+* Layout, stacking, scrolling, header, footer and horizontal-overflow checks passed. Booking CTAs from Home, the shared header and Fitness Hub passed. Navigation and mobile-menu closing passed.
+* /#contact backward-compatible scrolling passed.
+* WhatsApp, Instagram and Maps destinations verified in the completed local test: WhatsApp 61412197390 with the existing coaching enquiry message; Instagram @rav_fitnesscoach; Maps Goodlife Health Clubs Glen Iris, 1438 High St, Glen Iris VIC 3146.
+* Email Enquiry testing: Pending (neither passed nor failed). Email Enquiry testing, Vercel preview and production verification remain pending.
+* Local-test checkpoint approved for commit and push. The development server has been stopped. RF-050 remains Review.
 
 ### RF-049 Approved Client Results Page Foundation
 
-* RF-049 is in Review on feature/rf-049-client-results-page. Vercel preview and production verification remain pending.
+* RF-049 is Done. Merged to main at 37c36ca (37c36ca13de30292cc1dc666b0ca017dd181c102); production verification passed, as confirmed by Ravi.
 * Extract the complete Home Client Results/testimonials section into components/results/ClientResults.tsx, preserving all three testimonials, Anthea's image, names, descriptions, result labels, training durations, heading, introduction, results section ID, JSX structure and styling exactly.
 * Home renders ClientResults in its original position. The /results route contains only SiteHeader, ClientResults and SiteFooter within the standard page wrapper.
 * Shared navigation destinations: brand and Home /, Coaching /coaching, Fitness Hub /fitness-hub, About Ravi /about, Client Results /results and Book a Complimentary Session /#contact.
@@ -214,7 +232,7 @@ Add client access and onboarding connections after the separate fitness app is r
 * Validation passed: ClientResults matches the committed Home section exactly after normalizing line endings; Home and /results both render the shared component. Home is unchanged beyond the import and replacement in its original position. The results section ID is retained for /#results. Lint, production build and git diff --check passed.
 * Local desktop and 320px mobile testing passed, as confirmed by Ravi. /results and Home display the matching Client Results section; all testimonials and Anthea's image were verified.
 * Card stacking, navigation, mobile-menu closing, scrolling, footer and overflow checks passed. /#results still reaches the Home testimonials.
-* Local-test checkpoint approved for commit and push. The development server has been stopped. RF-049 is not Done.
+* Foundation committed and merged; RF-049 production checkpoint complete.
 
 ### RF-048 Approved About Ravi Page Foundation
 
@@ -560,3 +578,4 @@ Add one entry after every completed task.
 | 14 September 2026 | RF-046 Coaching page foundation | Preview and production verification passed, confirmed by Ravi; Done | db79c43 | Production verified |
 | 14 September 2026 | RF-047 Fitness Hub foundation | Production verification passed, confirmed by Ravi; Done | b507085 | Production verified |
 | 14 September 2026 | RF-048 About Ravi page foundation | Production verification passed, confirmed by Ravi; Done | 91a4640 | Production verified |
+| 15 September 2026 | RF-049 Client Results page foundation | Production verification passed, confirmed by Ravi; Done | 37c36ca | Production verified |

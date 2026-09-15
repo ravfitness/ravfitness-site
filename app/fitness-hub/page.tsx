@@ -50,7 +50,7 @@ export default function FitnessHubPage() {
             <Link href="/coaching" className="inline-flex min-h-11 items-center justify-center rounded-xl border border-gray-300 px-5 py-3 text-center text-sm font-semibold hover:bg-gray-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5b533]">
               Explore Coaching
             </Link>
-            <Link href="/#contact" className="inline-flex min-h-11 items-center justify-center rounded-xl bg-[#f5b533] px-5 py-3 text-center text-sm font-semibold text-black hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5b533]">
+            <Link href="/book" className="inline-flex min-h-11 items-center justify-center rounded-xl bg-[#f5b533] px-5 py-3 text-center text-sm font-semibold text-black hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5b533]">
               Book a Complimentary Session
             </Link>
           </div>
