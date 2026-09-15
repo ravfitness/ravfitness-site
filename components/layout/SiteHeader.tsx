@@ -50,7 +50,7 @@ export default function SiteHeader() {
               {label}
             </Link>
           ))}
-          <Link href="/#contact" className="inline-flex min-h-11 items-center justify-center px-4 py-2 rounded-xl text-sm font-semibold bg-[#f5b533] text-black hover:brightness-110 shadow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5b533]">
+          <Link href="/book" className="inline-flex min-h-11 items-center justify-center px-4 py-2 rounded-xl text-sm font-semibold bg-[#f5b533] text-black hover:brightness-110 shadow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5b533]">
             Book a Complimentary Session
           </Link>
         </nav>
@@ -85,7 +85,7 @@ export default function SiteHeader() {
             </li>
           ))}
           <li className="mt-2">
-            <Link href="/#contact" onClick={() => setMenuOpen(false)} className="flex min-h-11 items-center justify-center rounded-xl bg-[#f5b533] px-3 py-3 text-center font-semibold text-black hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5b533]">
+            <Link href="/book" onClick={() => setMenuOpen(false)} className="flex min-h-11 items-center justify-center rounded-xl bg-[#f5b533] px-3 py-3 text-center font-semibold text-black hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5b533]">
               Book a Complimentary Session
             </Link>
           </li>
