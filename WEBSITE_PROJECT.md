@@ -121,6 +121,7 @@ The website should clearly present RavFitness services, packages, offers, client
 | RF-048 | P2       | About Ravi  | About Ravi page foundation                                     | Done |
 | RF-049 | P2       | Results     | Client Results page foundation                                 | Done |
 | RF-050 | P1       | Booking     | Book a Complimentary Session page foundation                   | Review |
+| RF-051 | P2       | Integration | RavFitness Shared Platform and AI Integration Direction (documentation only) | Review |
 
 ## Sprint 0 — Website Foundation
 
@@ -203,11 +204,21 @@ Add client access and onboarding connections after the separate fitness app is r
 
 ## Current Next Task
 
-**RF-050 — Book a Complimentary Session page foundation**
+**RF-051 — RavFitness Shared Platform and AI Integration Direction**
+
+### RF-051 Shared Platform and AI Integration Direction
+
+* RF-051 is in Review on feature/rf-051-platform-integration-direction, pending merge and production documentation verification. The shared-platform architecture documentation was reviewed and approved by Ravi. Documentation and architecture planning only; implementation remains unauthorized. Future APIs, AI providers, external messaging, identity linking and data sharing require separate requirements and approval.
+* Direction: [RavFitness Platform Integration](docs/architecture/RAVFITNESS_PLATFORM_INTEGRATION.md). No equivalent integration document existed; existing website architecture guidance remains in this tracker.
+* Approved principles: "People train. RavFitness handles the system around their training."; "RavFitness AI — Talk. Train. Progress."; "Never Break The Chain."
+* Website/business and mobile/fitness products remain separate repositories, deployments, permissions and data responsibilities, independently testable and releasable. The mobile app is an external boundary only; its repository was not accessed.
+* Future contracts cover leads, consultations, explicit onboarding, invitations, packages, coaching relationships and entitlements. Event concepts are not approved APIs, schemas or implementation specifications.
+* Narrow authorized AI actions, server-side credentials, separately protected marketing and fitness data, consent, opt-outs, approvals and auditing are required. Identity linking, provider choices and integration details remain unresolved and require separate authorization.
+* RF-050 remains Review with Email Enquiry testing Pending; production testing passed for f9ad423 as confirmed by Ravi. RF-045 and unrelated priorities remain unchanged.
 
 ### RF-050 Approved Book a Complimentary Session Page Foundation
 
-* RF-050 is in Review on feature/rf-050-book-session-page. Email Enquiry testing, Vercel preview and production verification remain pending.
+* RF-050 remains Review because Email Enquiry testing is Pending. Merged to main at f9ad423 (f9ad42351632258da8e9f7f1de2667963c469cc7); production testing passed, as confirmed by Ravi.
 * Extract the complete existing Home contact section into components/contact/BookSession.tsx, preserving all headings, text, enquiry actions, contact and location information, JSX structure, styling classes and contact section ID exactly.
 * Home renders BookSession in its original position after ClientResults. The /book route contains only SiteHeader, BookSession and SiteFooter within the standard page wrapper.
 * Update booking CTAs in the Home Hero, shared desktop/mobile header and Fitness Hub to /book. The shared Coaching section contains no booking CTA; its page uses the shared header.
@@ -219,7 +230,7 @@ Add client access and onboarding connections after the separate fitness app is r
 * Layout, stacking, scrolling, header, footer and horizontal-overflow checks passed. Booking CTAs from Home, the shared header and Fitness Hub passed. Navigation and mobile-menu closing passed.
 * /#contact backward-compatible scrolling passed.
 * WhatsApp, Instagram and Maps destinations verified in the completed local test: WhatsApp 61412197390 with the existing coaching enquiry message; Instagram @rav_fitnesscoach; Maps Goodlife Health Clubs Glen Iris, 1438 High St, Glen Iris VIC 3146.
-* Email Enquiry testing: Pending (neither passed nor failed). Email Enquiry testing, Vercel preview and production verification remain pending.
+* Email Enquiry testing: Pending (neither passed nor failed). Production testing passed for merge commit f9ad423; RF-050 is not Done.
 * Local-test checkpoint approved for commit and push. The development server has been stopped. RF-050 remains Review.
 
 ### RF-049 Approved Client Results Page Foundation
