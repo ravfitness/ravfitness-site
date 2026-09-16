@@ -121,7 +121,7 @@ The website should clearly present RavFitness services, packages, offers, client
 | RF-048 | P2       | About Ravi  | About Ravi page foundation                                     | Done |
 | RF-049 | P2       | Results     | Client Results page foundation                                 | Done |
 | RF-050 | P1       | Booking     | Book a Complimentary Session page foundation                   | Review |
-| RF-051 | P2       | Integration | RavFitness Shared Platform and AI Integration Direction (documentation only) | Review |
+| RF-051 | P2       | Integration | RavFitness Shared Platform and AI Integration Direction (documentation only) | Done |
 
 ## Sprint 0 — Website Foundation
 
@@ -204,11 +204,177 @@ Add client access and onboarding connections after the separate fitness app is r
 
 ## Current Next Task
 
-**RF-051 — RavFitness Shared Platform and AI Integration Direction**
+**RF-044 Stage 4B — Coaching preview — Next, not started; separate authorization required. RF-044 remains In Progress.**
+
+### RF-044 Stage 4A — Conversion-focused Home preview content map
+
+**Status: Completed — Ravi approved the Stage 4A documentation and content plan. RF-044 remains In Progress. Stage 4B is next, not started and requires separate authorization; no implementation is authorized.**
+
+* Scope: documentation and content planning in ravfitness-site only. Only WEBSITE_PROJECT.md changes; no mobile-app repository access.
+* Start checkpoint: main was clean; after fetching origin, main and origin/main both resolved to 90253574365f578345583b423188ebd5f2901551 (0 ahead / 0 behind). The merge is in main. Working branch: feature/rf-044-home-content-previews.
+* Read completely: AGENTS.md, README.md, this tracker and docs/architecture/RAVFITNESS_PLATFORM_INTEGRATION.md. Inspected Home, the five dedicated routes and their existing components, plus shared header/footer.
+* RF-051: Done; merge 9025357; production verification Passed per Ravi’s brief. This tracker supersedes the integration document’s historical pre-merge Review statements; that file remains untouched under the single-file restriction.
+* RF-050: Review; production Passed at f9ad423; Email Enquiry Pending. RF-045: Ready and deferred, unchanged. RF-044: In Progress.
+* Preserve the production Hero design, including its black-and-gold treatment, all existing Hero copy and transformation panel, captions and images until Ravi supplies coaching media. Preserve “Get Stronger. Move Better. Feel Like Yourself Again.” Hero CTAs remain “Book a Complimentary Session” → /book and “Explore Coaching” → /coaching.
+* Preserve black, white and gold, and Never Break The Chain. No prices, invented testimonials, statistics, achievements, claims or results; no 6-week challenge promotion or fixed-duration result promises.
+* Source boundary: public copy below reuses or condenses existing website content. The partner size/terminology and explicit online inclusions follow Ravi’s approved Stage 4A requirements and recorded RF-046 business facts; they are not presented as wording already live on /coaching.
+
+#### Final approved Home section order — documentation only
+
+| Order | Section | Content retained or proposed | Primary CTA | Component |
+| --- | --- | --- | --- | --- |
+| 1 | Shared SiteHeader | Existing brand, tagline and navigation unchanged | Book a Complimentary Session → /book | SiteHeader |
+| 2 | Existing production Hero | Complete existing design, wording and transformation imagery unchanged | Book a Complimentary Session → /book; secondary Explore Coaching → /coaching | Existing inline Hero; no extraction required |
+| 3 | Coaching preview | Three short coaching options | Explore Coaching → /coaching | HomeCoachingPreview |
+| 4 | Client Results preview | One featured Anthea excerpt with her existing approved portrait | Read Client Results → /results | HomeResultsPreview |
+| 5 | About Ravi preview | Short corporate-to-coaching introduction | Read Ravi’s Story → /about | HomeAboutPreview |
+| 6 | Fitness Hub preview | Exactly two existing titles, each Video Coming Soon | Explore the Fitness Hub → /fitness-hub | HomeFitnessHubPreview |
+| 7 | Final booking CTA | Short invitation, existing location and tagline | Book a Complimentary Session → /book | HomeBookingCta |
+| 8 | Shared SiteFooter | Existing copyright footer unchanged | None | SiteFooter |
+
+Ravi selected this order for the documentation checkpoint. Keep previews short and independent; dedicated pages remain the complete content sources. During separately authorized implementation, replace Home’s full contact block with the compact final booking CTA linking to /book. No separate trust strip, duplicate transformation panel or expanded footer is included.
+
+#### Exact public wording — approved by Ravi
+
+These blocks contain all proposed new Home preview wording, including labels and CTA text. Existing header, complete Hero and footer remain unchanged; no other preview copy is implied.
+
+**Coaching preview**
+
+* Heading: How We Can Train
+* Introduction: Choose the coaching style that fits your goals, schedule and personality.
+* Option heading: One-to-One Personal Training
+* Option copy: Private, personalised coaching built around your body, schedule and goals.
+* Option heading: Partner & Semi-Private Coaching
+* Option copy: Coaching for partners, friends or appropriately matched people — 2–3 people maximum.
+* Option heading: Online Coaching
+* Option copy: An individual program, progress tracking, accountability and a weekly connection/check-in.
+* CTA: Explore Coaching → /coaching
+
+**Client Results preview — selected single Anthea feature**
+
+* Heading: Real People. Real Results.
+* Context label: Testimonial excerpt
+* Quote: “I started training with Ravi after a 15-year break from weight training. I was nervous and needed someone to keep me accountable. From the first session I felt calm and confident.”
+* Attribution: Anthea
+* Attribution detail: Goodlife Glen Iris • Gym Member
+* CTA: Read Client Results → /results
+
+**About Ravi preview**
+
+* Label: About Ravi
+* Heading: Turning Passion Into Purpose
+* Copy: After 15 years in the corporate world, I chose to follow a lifelong passion for movement, strength training, and helping people live healthier, more confident lives. Today, I run my coaching business at Goodlife Glen Iris.
+* CTA: Read Ravi’s Story → /about
+
+**Fitness Hub preview**
+
+* Heading: Fitness Hub
+* Copy: Practical training, movement skills and real coaching progress from RavFitness.
+* Item title: My Muscle-Up Journey
+* Item status: Video Coming Soon
+* Item title: Client Muscle-Up Success
+* Item status: Video Coming Soon
+* Availability copy: Original videos are being prepared for the website.
+* CTA: Explore the Fitness Hub → /fitness-hub
+
+**Final booking CTA**
+
+* Label: Ready To Start?
+* Heading: Let’s Build Strength You Can Rely On.
+* Copy: Book a session, ask a question, or start with a simple conversation.
+* Location: Goodlife Health Clubs Glen Iris
+* CTA: Book a Complimentary Session → /book
+* Brand close: Never Break The Chain
+
+#### Preview specifications and dedicated-page boundaries
+
+Exact headings and copy are specified in the public-wording blocks above. All five components are independently maintained Home components, proposed under components/home; they must not import or render the full dedicated-page components. Keep preview content separate from presentation where practical with explicit TypeScript types and no any. Editing a dedicated page must not silently rewrite a Home preview.
+
+| Preview | Purpose / visitor question answered | Supporting imagery or content / what remains on Home | What moves off Home or remains on dedicated page | Primary / optional secondary CTA |
+| --- | --- | --- | --- | --- |
+| Coaching | Help visitors choose a coaching format. “How can I train with Ravi?” | Three compact text options; no new imagery, price, package or outcome claim. Source: CoachingServices and approved business facts. | /coaching retains complete CoachingServices, descriptions, benefit lists and goal labels unchanged. Remove its full Home rendering during implementation. | Explore Coaching → /coaching / none recommended |
+| About Ravi | Establish personal connection. “Who is Ravi and what led him to coaching?” | One short paragraph from AboutRavi; no second transformation panel or new portrait. Existing transformation imagery stays in Hero. | /about retains complete AboutRavi: mission, philosophy, corporate career, transformation narrative and current coaching story unchanged. Remove its full Home rendering. | Read Ravi’s Story → /about / none recommended |
+| Client Results | Provide specific social proof. “What did a client experience with Ravi?” | Anthea’s existing /images/testimonials/anthea.jpg portrait, exact opening excerpt and attribution. No time-based promise or new result headline. | /results retains ClientResults with all three complete testimonials, Anthea’s image, descriptions, ages, result labels and recorded training durations unchanged. Remove full cards from Home. | Read Client Results → /results / none recommended |
+| Fitness Hub | Introduce content direction honestly. “What training stories are planned, and can I watch them yet?” | Only the two existing titles and explicit unavailable-video statuses; compact text list, no player, thumbnail, embed or clickable play symbol. | /fitness-hub retains its introduction, both full card descriptions, preparation notice and CTAs unchanged. Home has no existing Hub section to remove. | Explore the Fitness Hub → /fitness-hub / none recommended |
+| Final booking CTA | Give a clear next step. “How do I start a conversation?” | Short existing invitation, location name and tagline; text only. /book is currently an enquiry page, not a live scheduling flow. | /book retains complete BookSession, contact actions, phone, email, Instagram, address, Maps link, location card and brand close unchanged. Remove its full Home rendering. Do not invent session duration, inclusions or calendar availability. | Book a Complimentary Session → /book / none recommended |
+
+| Preview | Mobile presentation | Accessibility considerations |
+| --- | --- | --- |
+| Coaching | Stack three concise options in source order; allow natural heights. Wider screens may use three columns only when copy fits. | Section H2 and option H3 headings; descriptive keyboard-accessible link, visible focus and readable contrast. No colour-only distinctions. |
+| About Ravi | One readable text block followed by CTA; no fixed height or extra image. | H2 linked to section context, normal text order and descriptive link; no text baked into images. |
+| Client Results | One featured Anthea quote with her existing approved portrait and attribution; CTA below, no carousel. | Use blockquote and associated attribution; meaningful portrait alt “Anthea”; mark excerpt visibly, avoid truncation and preserve full quote access through /results. |
+| Fitness Hub | Two stacked title/status rows; keep status adjacent to each title. At tablet/desktop use compact rows or two columns. | H2/H3 hierarchy; status in text, not colour alone. No focusable fake players or unavailable-video links. CTA clearly opens the Hub. |
+| Final booking CTA | One column with full-width booking link on narrow screens; no location/contact grid. | H2, clear /book link with visible focus, sufficient contrast on black and a comfortable touch target. Decorative gold effects hidden from assistive technology. |
+
+For all previews: verify 320px mobile, tablet and desktop; text zoom, wrapping, no horizontal overflow, logical keyboard order, visible focus and readable black/white/gold combinations. Use links for navigation. Do not force full-screen preview heights.
+
+#### Client Results comparison and selected option
+
+| Option | Benefit | Tradeoff |
+| --- | --- | --- |
+| One featured Anthea excerpt | A coherent return-to-training story addresses nervousness and accountability; existing portrait adds personal context; shortest reading path to /results. | Shows one perspective; visitors follow the CTA for breadth. |
+| Short excerpts from Anthea, Andrew and David | Shows several coaching experiences without full testimonials. | More competing text on mobile; two clients have no supplied portrait; very short excerpts lose some narrative context. |
+
+Ravi selected one featured Anthea testimonial with her existing approved /images/testimonials/anthea.jpg portrait. The comparison above records the rationale; multiple excerpts are not part of the final Home map. All three complete testimonials remain unchanged on /results. This is a content/design judgment, not a measured conversion claim.
+
+Excerpt verification: the quoted text above is exactly the opening three consecutive sentences of Anthea’s approved testimonial in components/results/ClientResults.tsx, ending “From the first session I felt calm and confident.” Only JSX source whitespace is normalized to rendered spaces; no words or punctuation inside the excerpt are changed, omitted or paraphrased. Keep the visible “Testimonial excerpt” label and attribution. Do not imply guaranteed or typical outcomes, update recorded durations, or invent imagery.
+
+#### Existing duplication and proposed removals
+
+* Home currently renders CoachingServices, AboutRavi, ClientResults and BookSession in full, exactly as their dedicated routes do. Shared SiteHeader/SiteFooter are intentional reuse and remain shared.
+* Replace those four full Home renderings with independent previews during later authorized implementation; do not merely hide, clamp or duplicate full sections in the DOM.
+* Remove full coaching benefit lists/goal labels, full mission and biography, three full testimonial cards and the contact/location grid from Home. They already exist on dedicated pages; no dedicated-page content needs to be moved or deleted.
+* Keep complete Hero transformation content unchanged. Do not repeat it in About. Fitness Hub gains only a short independent preview.
+* No dedicated-page wording, layout, navigation, route or business-rule changes are included. /coaching currently contains outdated “Small Group Training / 3–6 People” wording; do not copy it to Home or change it in this task. Correction to Partner & Semi-Private Coaching for 2–3 people maximum requires a separate approved task.
+
+#### Backward-compatible Home anchors — recorded decision, not implemented
+
+| Existing URL | Approved target for later implementation | Behaviour to preserve |
+| --- | --- | --- |
+| /#about | id="about" on HomeAboutPreview section | Reach the introduction; /about link opens the full story. |
+| /#results | id="results" on HomeResultsPreview section | Reach the testimonial feature; /results link opens all results. |
+| /#contact | id="contact" on HomeBookingCta section | Reach the final booking invitation; /book provides full contact/enquiry details. |
+
+Record Ravi’s decision to assign the existing IDs directly to the corresponding new Home sections, once each, during separately authorized implementation. Preserve header-aware scroll spacing and test direct URL loads, in-page navigation and browser back/forward. Do not redirect hash links to dedicated pages. Retain existing Hero id="home"; retaining id="services" on the Coaching preview would also preserve the older service anchor. No IDs, anchors or redirects are implemented in Stage 4A. RF-045 remains deferred; future anchor tests must distinguish its known header issue from a new regression.
+
+#### SEO considerations for later implementation
+
+* Retain Home’s existing local identity, Hero text and single screen-reader H1 “Personal Trainer in Glen Iris, Melbourne”; use section H2s and item H3s below it. Hero semantics/design changes are outside this proposal.
+* Keep useful, visible summary text and descriptive links to existing dedicated routes. Independent previews reduce repeated full-page content without removing dedicated-page detail.
+* Preserve existing routes and metadata during this work. No new canonical rules, sitemap entries, structured data, rating markup or video markup is proposed; unavailable videos must not be represented as playable.
+* Keep location name in the final CTA and Hero; detailed address/contact information stays on /book. Do not add location keywords or unsupported credentials just for search.
+* Future performance checks should confirm the new preview adds no video payload and uses the existing optimized portrait with meaningful alt text.
+
+#### Ravi’s approval and remaining boundaries
+
+Ravi approved the final Home section order, exact public copy below the order table, single featured Anthea testimonial with her existing approved portrait, independent Home preview components, preserved legacy anchors, compact final booking CTA and unchanged production Hero. This completes Stage 4A documentation only; it does not authorize implementation.
+
+* Recorded from Ravi’s refinement brief: Results precedes About Ravi; use one Anthea feature with her existing approved portrait; retain the documented short Coaching, About Ravi, Fitness Hub and final booking copy; replace Home’s full contact block with the compact /book CTA; preserve the three specified legacy IDs on the new previews.
+* Preserve the complete production Hero unchanged. Its existing “small group” trust line and negative “No 6-week BS challenges” wording are not new Home-preview copy or challenge promotion; any later terminology/tone revision needs separate approval.
+* Ravi authorized staging and committing only WEBSITE_PROJECT.md with the message “Complete RF-044 Stage 4A Home content plan”, then pushing feature/rf-044-home-content-previews to origin. Merge, deployment and Stage 4B remain unauthorized.
+* Separately approve the /coaching correction to 2–3 people maximum. This task leaves that dedicated page unchanged.
+* Preview spacing, column treatment and black/white/gold section styling remain for visual review after implementation is separately authorized. No design mockup is approved by this map.
+
+#### Recommended Stage 4 sequence — each stage requires authorization
+
+* **4A — Content map (Completed):** Ravi approved the final content plan and exact wording. Implementation requires separate authorization.
+* **4B — Coaching preview (Next; not started; separate authorization required):** Once authorized, introduce only HomeCoachingPreview and replace Home’s full CoachingServices rendering. Verify exact copy, /coaching destination, responsive stacking and unchanged dedicated page.
+* **4C — Results preview:** Introduce HomeResultsPreview after Coaching and replace full ClientResults on Home. Verify the exact Anthea excerpt, existing approved portrait, attribution, #results and unchanged /results.
+* **4D — About preview:** Introduce HomeAboutPreview after Results, replace Home’s full AboutRavi rendering and preserve #about. Verify story link, anchor and unchanged /about.
+* **4E — Hub preview:** Add HomeFitnessHubPreview in the approved position. Verify exactly two titles, honest statuses, /fitness-hub destination, no unavailable media loaded and unchanged dedicated page.
+* **4F — Final booking CTA:** Replace Home’s BookSession rendering with HomeBookingCta; preserve #contact. Verify /book link and unchanged full enquiry/contact page.
+* **4G — Integrated review:** Confirm all eight sections, preserved Hero/header/footer, no full dedicated-page components rendered on Home, all CTA destinations, legacy anchors and no unrelated changes. Test mobile/tablet/desktop and keyboard/zoom behaviour.
+* For each code stage: run lint, production build and diff checks; test changed behaviour plus dedicated-page isolation; review locally before continuing. Later commit/push require explicit approval; use a Vercel preview before any separately approved merge, then verify production. The approved Stage 4A documentation commit and feature-branch push are the only exception; no implementation, merge or deployment is authorized.
+
+#### Stage 4A handoff checkpoint
+
+Refinement checkpoint: confirmed feature/rf-044-home-content-previews with only the intended unstaged WEBSITE_PROJECT.md change and no staged files. Recorded Ravi’s selected order, Anthea feature and portrait, compact final booking CTA and legacy anchor decisions. Anthea’s excerpt matches the approved source exactly and contiguously after rendered-whitespace normalization.
+
+Only WEBSITE_PROJECT.md changed. No website code, routes, navigation, dependencies, media, forms, AI, redirects or integrations changed; the mobile-app repository was not accessed. Documentation validation: git diff --check Passed. Lint/build are not applicable to this documentation-only change. Stage 4A is Completed with Ravi’s approval; RF-044 remains In Progress. RF-050 remains Review with production testing Passed and Email Enquiry Pending; RF-045 remains deferred and unchanged. Stage 4B is next, not started and requires separate authorization. Only the documentation commit and feature-branch push are authorized at this checkpoint; no merge, deployment or implementation is authorized.
 
 ### RF-051 Shared Platform and AI Integration Direction
 
-* RF-051 is in Review on feature/rf-051-platform-integration-direction, pending merge and production documentation verification. The shared-platform architecture documentation was reviewed and approved by Ravi. Documentation and architecture planning only; implementation remains unauthorized. Future APIs, AI providers, external messaging, identity linking and data sharing require separate requirements and approval.
+* RF-051 is Done. Merged to main at 9025357 (90253574365f578345583b423188ebd5f2901551); production verification Passed, as confirmed by Ravi in the Stage 4A brief. The shared-platform architecture documentation was reviewed and approved by Ravi. Documentation and architecture planning only; implementation remains unauthorized. Future APIs, AI providers, external messaging, identity linking and data sharing require separate requirements and approval.
 * Direction: [RavFitness Platform Integration](docs/architecture/RAVFITNESS_PLATFORM_INTEGRATION.md). No equivalent integration document existed; existing website architecture guidance remains in this tracker.
 * Approved principles: "People train. RavFitness handles the system around their training."; "RavFitness AI — Talk. Train. Progress."; "Never Break The Chain."
 * Website/business and mobile/fitness products remain separate repositories, deployments, permissions and data responsibilities, independently testable and releasable. The mobile app is an external boundary only; its repository was not accessed.
@@ -224,7 +390,7 @@ Add client access and onboarding connections after the separate fitness app is r
 * Update booking CTAs in the Home Hero, shared desktop/mobile header and Fitness Hub to /book. The shared Coaching section contains no booking CTA; its page uses the shared header.
 * Current shared navigation: brand and Home /, Coaching /coaching, Fitness Hub /fitness-hub, About Ravi /about, Client Results /results and Book a Complimentary Session /book. These destinations supersede earlier checkpoint destinations below.
 * Preserve /#contact for backward compatibility. Contact actions and all non-booking links remain unchanged.
-* No booking form, calendar, payments, scheduling service, content redesign, new media or dependencies. Home refinement remains paused and RF-045 remains deferred.
+* No booking form, calendar, payments, scheduling service, content redesign, new media or dependencies. Home’s documentation-only Stage 4A is Completed; Stage 4B is next, not started and requires separate authorization. RF-045 remains deferred.
 * Validation passed: BookSession matches the committed Home contact section exactly after normalizing line endings; Home retains its original position and both Home and /book render BookSession. Generated Home HTML retains id="contact" for /#contact. All four booking CTA instances use /book; contact actions, non-booking links and other content are unchanged. Lint, production build and git diff --check passed. Desktop and 320px mobile visual testing passed, as confirmed by Ravi. /book and the Home contact section matched.
 
 * Layout, stacking, scrolling, header, footer and horizontal-overflow checks passed. Booking CTAs from Home, the shared header and Fitness Hub passed. Navigation and mobile-menu closing passed.
@@ -276,7 +442,7 @@ Add client access and onboarding connections after the separate fitness app is r
 
 * RF-046 is Done. Preview and production verification passed, as confirmed by Ravi, for merge commit db79c43 (db79c43d108272207658a4ebdafff6b5214519a7), merged to main and pushed to origin.
 * Production verification passed for RF-044 Stages 1–3 merge commit 90ed8ee, as confirmed by Ravi.
-* RF-044 Home refinement remains In Progress but is paused while destination pages are built. Stage 4 — Quick Trust Strip and Coaching Preview — remains its next stage.
+* RF-044 Home refinement remains In Progress. Stage 4A content planning is Completed and approved by Ravi. Stage 4B is next, not started and requires separate authorization. No implementation is authorized yet.
 * Approved route: /coaching, using the existing SiteHeader and SiteFooter.
 * The expanded eight-section RF-046 design was rejected during local visual review, including the large black introduction and additional coaching sections.
 * Approved first version: Extract the existing Home Coaching/Services section into components/coaching/CoachingServices.tsx and render the same component in its original Home location and between SiteHeader and SiteFooter on /coaching.
@@ -318,7 +484,7 @@ Add client access and onboarding connections after the separate fitness app is r
 * Preserve the complete My Transformation before-and-after panel, images, captions and styling in the Hero.
 * Hero CTA labels: Book a Complimentary Session -> #contact; Explore Coaching -> #services. Existing CTA layout, styling and anchor destinations are preserved.
 * Professional coaching media will be added after Ravi creates it; the text-only Hero decision and planned removal of the transformation panel are superseded.
-* Next RF-044 activity — Stage 4: Quick Trust Strip and Coaching Preview.
+* RF-044 Stage 4A: Conversion-focused Home preview content map — Completed and approved by Ravi. Stage 4B is next, not started and requires separate authorization. No implementation is authorized yet.
 
 ### RF-044 Stage 2 Approved Interim Navigation
 
@@ -367,7 +533,9 @@ Primary navigation: Home | Coaching | Fitness Hub | About Ravi | Client Results 
 * The booking navigation item should remain the visually prominent primary CTA.
 * Detailed coaching, package and content routes are not yet approved.
 
-### Approved Home Page Content Map
+### Earlier Approved Home Page Content Map (historical)
+
+The completed Stage 4A map is approved by Ravi and supersedes this earlier map. This earlier map is retained as history, not an implementation instruction: its separate trust strip, extra transformation preview, Hero-media replacement and expanded contact/footer scope are not part of Stage 4A. The production Hero preservation requirement takes precedence. Implementation still requires separate authorization.
 
 #### A. Header
 
@@ -590,3 +758,5 @@ Add one entry after every completed task.
 | 14 September 2026 | RF-047 Fitness Hub foundation | Production verification passed, confirmed by Ravi; Done | b507085 | Production verified |
 | 14 September 2026 | RF-048 About Ravi page foundation | Production verification passed, confirmed by Ravi; Done | 91a4640 | Production verified |
 | 15 September 2026 | RF-049 Client Results page foundation | Production verification passed, confirmed by Ravi; Done | 37c36ca | Production verified |
+| 16 September 2026 | RF-051 platform integration direction | Done; production verification Passed, confirmed by Ravi in the Stage 4A brief | 9025357 | Production verified |
+| 16 September 2026 | RF-044 Stage 4A Home content plan | Completed; final order, exact copy, Anthea feature/portrait, independent previews, legacy anchors, compact booking CTA and unchanged Hero approved by Ravi | This documentation checkpoint | No deployment authorized |
