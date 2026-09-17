@@ -114,7 +114,7 @@ The website should clearly present RavFitness services, packages, offers, client
 | RF-041 | P3       | Integration | Add Client Login when the fitness app is ready                 | Backlog |
 | RF-042 | P3       | Integration | Connect website onboarding with the fitness app                | Backlog |
 | RF-043 | P3       | Integration | Connect future app booking and payment features                | Backlog |
-| RF-044 | P1       | Home        | Build the conversion-focused Home page                         | In Progress |
+| RF-044 | P1       | Home        | Build the conversion-focused Home page                         | Review |
 | RF-045 | P2       | Navigation  | Investigate fixed header temporarily disappearing on some mobile anchor jumps until slight scrolling | Ready |
 | RF-046 | P1       | Coaching    | Build the independent Coaching page                            | Done |
 | RF-047 | P2       | Fitness Hub | Build the Fitness Hub foundation                               | Done |
@@ -204,9 +204,27 @@ Add client access and onboarding connections after the separate fitness app is r
 
 ## Current Next Task
 
-**RF-044 Stage 4B — Coaching preview — Next, not started; separate authorization required. RF-044 remains In Progress.**
+**RF-044 Stage 4B — Completed and approved for release. RF-044 is in Review pending Vercel preview and production verification.**
 
-### RF-044 Stage 4A — Conversion-focused Home preview content map
+### RF-044 Stage 4B — Completed homepage implementation and release checkpoint
+
+* Ravi approved the final homepage refinements and authorized commit, push and release through the documented Vercel workflow. This final implementation supersedes the historical Stage 4A plan below and earlier Stage 4B checkpoints.
+* Approved order: shared SiteHeader → HomeHero → HomeTransformation (combined Transformation/About preview) → HomeCoachingPreview → HomeResultsPreview → HomeFitnessHubPreview → HomeBookingCta → shared SiteFooter. No separate About preview is rendered; the unused superseded HomeAboutPreview file was removed before release.
+* Hero: original supplied portrait, white surface, restrained gold glow, existing headline/supporting/consistency text, approved location microcopy and /book + /coaching CTAs. Decorative handwritten text/font removed as approved. Asset is byte-for-byte identical to IMG_0291 (1).JPG (SHA-256 5E0BD0C0FA437443FC39F2D4B88BD00119FE00F34FE3639B11EB5EB908CD8735). No generated mockup imagery or retouching.
+* Transformation/About: original photos/captions, compact black/gold container, equal 5:4 contain viewports, Turning Passion Into Purpose, approved corporate-to-coaching excerpt, Read My Story → /about. Retains id="about" immediately after Hero.
+* Coaching: three compact white cards, approved SVG icons and coaching copy; partner/semi-private is 2–3 people maximum. All links use /coaching because specific service anchors do not exist. No dedicated-page anchors or wording changed.
+* Results: Anthea's real portrait and exact approved excerpt, Andrew's exact approved excerpt and decorative initials avatar; semantic blockquotes with decorative gold marks and no literal surrounding quote characters; See More Client Results → /results. Retains id="results".
+* Fitness Hub: two equal compact icon-left/content-right cards, approved titles/descriptions, Video Coming Soon badges, decorative non-interactive play icons and Explore Fitness Hub → /fitness-hub. No videos, thumbnails or invented availability.
+* Final CTA/contact: approved black/gold three-column desktop and stacked mobile layout, invitation/copy, WhatsApp, contact details, TRAINING LOCATION card, Maps and motto. Booking → /book is visible below 768px and hidden at/above 768px per Ravi's instruction; WhatsApp remains visible at every width. Middle column vertically centred on desktop. Retains id="contact". Shared header unchanged (full navigation/booking CTA appears at 1024px, with mobile menu below that breakpoint).
+* Exact release files: app/page.tsx; components/home/HomeHero.tsx; components/home/HomeTransformation.tsx; components/home/HomeCoachingPreview.tsx; components/home/HomeResultsPreview.tsx; components/home/HomeFitnessHubPreview.tsx; components/home/HomeBookingCta.tsx; public/images/ravi-hero-original.jpg; WEBSITE_PROJECT.md. No shared layout, dedicated page/component, configuration, dependency or mobile-app changes.
+* Validation: npm.cmd run lint Passed; npm.cmd run build Passed (TypeScript and all routes); git diff --check Passed. Complete tracked/untracked source review passed. Existing baseline-browser-mapping freshness warning is non-blocking; no packages installed or updated.
+* Local Chrome visual review Passed at desktop 1440px and mobile 320px, 375px and 390px: full-page screenshot sequences inspected; correct order, spacing, wrapping and stacking, no horizontal overflow or clipped text/controls, all images loaded.
+* Interaction checks Passed: unique about/results/contact IDs and direct hash navigation, header scroll offsets, visible 2px keyboard focus on all Home CTAs/contact links. Mobile menu opens, closes with Escape and on link selection. No browser runtime/console errors captured. Dedicated /coaching, /results, /about, /fitness-hub and /book each returned HTTP 200.
+* Links: Home CTAs use approved routes. Both WhatsApp links return the expected 302 to the approved number; Instagram and Maps return HTTP 200. Email retains mailto:info@ravfitness.com.au. Phone retains its approved WhatsApp link. No calls/messages/email sent; third-party app handoff and delivery are not certified by these checks.
+* Release status at commit: local checks complete; Vercel preview and production verification pending feature push. Production URL: https://www.ravfitness.com.au. Workflow: feature push → verified Vercel preview → authorized merge to main → automatic production deployment → live verification. Production is not yet marked Passed.
+* RF-050 remains Review with production Passed and Email Enquiry Pending. RF-045 remains Ready and deferred; these tests do not close the previously reported intermittent header issue. Dedicated /coaching retains outdated 3–6 People wording pending separately approved correction.
+
+### RF-044 Stage 4A — Conversion-focused Home preview content map (historical approved plan)
 
 **Status: Completed — Ravi approved the Stage 4A documentation and content plan. RF-044 remains In Progress. Stage 4B is next, not started and requires separate authorization; no implementation is authorized.**
 
