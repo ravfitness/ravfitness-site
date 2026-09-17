@@ -114,7 +114,7 @@ The website should clearly present RavFitness services, packages, offers, client
 | RF-041 | P3       | Integration | Add Client Login when the fitness app is ready                 | Backlog |
 | RF-042 | P3       | Integration | Connect website onboarding with the fitness app                | Backlog |
 | RF-043 | P3       | Integration | Connect future app booking and payment features                | Backlog |
-| RF-044 | P1       | Home        | Build the conversion-focused Home page                         | Review |
+| RF-044 | P1       | Home        | Build the conversion-focused Home page                         | Done |
 | RF-045 | P2       | Navigation  | Investigate fixed header temporarily disappearing on some mobile anchor jumps until slight scrolling | Ready |
 | RF-046 | P1       | Coaching    | Build the independent Coaching page                            | Done |
 | RF-047 | P2       | Fitness Hub | Build the Fitness Hub foundation                               | Done |
@@ -204,7 +204,7 @@ Add client access and onboarding connections after the separate fitness app is r
 
 ## Current Next Task
 
-**RF-044 Stage 4B — Completed; authenticated Vercel preview approved by Ravi. RF-044 is in Review pending production verification.**
+**RF-044 Stage 4B — Completed. RF-044 is Done; authenticated preview approved by Ravi and production verification Passed.**
 
 ### RF-044 Stage 4B — Completed homepage implementation and release checkpoint
 
@@ -223,6 +223,8 @@ Add client access and onboarding connections after the separate fitness app is r
 * Links: Home CTAs use approved routes. Both WhatsApp links return the expected 302 to the approved number; Instagram and Maps return HTTP 200. Email retains mailto:info@ravfitness.com.au. Phone retains its approved WhatsApp link. No calls/messages/email sent; third-party app handoff and delivery are not certified by these checks.
 * Manual preview approval (18 September 2026): Ravi reviewed the authenticated Vercel preview for homepage commit e195190d72ecb8622f447032bfb1dc0d454a1a13 and approved desktop and mobile appearance. Vercel deployment and Preview Comments checks passed. Release PR: https://github.com/ravfitness/ravfitness-site/pull/1. Production verification remains pending merge and automatic deployment to https://www.ravfitness.com.au.
 * Resume inspection: working tree clean; HomeAboutPreview.tsx is absent from both HEAD and the working tree and has no committed history. It was an unused untracked intermediate component superseded by HomeTransformation before the homepage commit, not a pending tracked deletion. No restoration or separate deletion commit is needed; existing committed code is preserved.
+* Release completed 18 September 2026: PR #1 merged after Vercel and Preview Comments checks passed, at af48d9f928bfb595dab18df7ed955e843170b20a. Homepage implementation commit: e195190d72ecb8622f447032bfb1dc0d454a1a13; manual approval record: fd4e3633d9bd99bc28483c89b3bab7d369971590. Fresh lint, production build and git diff --check Passed before merge.
+* Vercel Production deployment succeeded (CCTHfUh2BttAuzAeQyV1aManjKEA). https://www.ravfitness.com.au returns HTTP 200 and serves the approved portrait, section order and TRAINING LOCATION card. Live Chrome checks at 1440, 320, 375 and 390px Passed: no horizontal overflow, all images loaded, mobile menu opens/closes via Escape and link selection, visible keyboard focus, unique legacy anchor targets and intended CTA URLs. No browser errors captured. All five dedicated routes return HTTP 200. This documentation-only follow-up records the observed production outcome; website code is unchanged.
 * RF-050 remains Review with production Passed and Email Enquiry Pending. RF-045 remains Ready and deferred; these tests do not close the previously reported intermittent header issue. Dedicated /coaching retains outdated 3–6 People wording pending separately approved correction.
 
 ### RF-044 Stage 4A — Conversion-focused Home preview content map (historical approved plan)
