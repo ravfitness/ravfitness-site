@@ -17,7 +17,7 @@ export default function HomeBookingCta() {
           </div>
           <div className="min-w-0 md:flex md:flex-col md:justify-center lg:border-l lg:border-[#f5b533]/25 lg:pl-6">
             <div className="flex flex-col gap-4">
-              <Link href="/book" className="inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-[#f5b533] px-4 py-3 text-center text-sm font-semibold text-black hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white md:hidden">Book a Complimentary Session</Link>
+              <Link href="/book" className="inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-[#f5b533] px-4 py-3 text-center text-sm font-semibold text-black hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Book a Complimentary Session</Link>
               <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 w-full items-center justify-center rounded-xl border border-[#f5b533] px-4 py-3 text-center text-sm font-semibold text-[#f5b533] hover:bg-[#f5b533]/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">WhatsApp Me</a>
             </div>
             <address className="mt-4 text-sm not-italic text-neutral-300">
