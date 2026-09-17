@@ -204,7 +204,7 @@ Add client access and onboarding connections after the separate fitness app is r
 
 ## Current Next Task
 
-**RF-044 Stage 4B — Completed and approved for release. RF-044 is in Review pending Vercel preview and production verification.**
+**RF-044 Stage 4B — Completed; authenticated Vercel preview approved by Ravi. RF-044 is in Review pending production verification.**
 
 ### RF-044 Stage 4B — Completed homepage implementation and release checkpoint
 
@@ -221,7 +221,8 @@ Add client access and onboarding connections after the separate fitness app is r
 * Local Chrome visual review Passed at desktop 1440px and mobile 320px, 375px and 390px: full-page screenshot sequences inspected; correct order, spacing, wrapping and stacking, no horizontal overflow or clipped text/controls, all images loaded.
 * Interaction checks Passed: unique about/results/contact IDs and direct hash navigation, header scroll offsets, visible 2px keyboard focus on all Home CTAs/contact links. Mobile menu opens, closes with Escape and on link selection. No browser runtime/console errors captured. Dedicated /coaching, /results, /about, /fitness-hub and /book each returned HTTP 200.
 * Links: Home CTAs use approved routes. Both WhatsApp links return the expected 302 to the approved number; Instagram and Maps return HTTP 200. Email retains mailto:info@ravfitness.com.au. Phone retains its approved WhatsApp link. No calls/messages/email sent; third-party app handoff and delivery are not certified by these checks.
-* Release status at commit: local checks complete; Vercel preview and production verification pending feature push. Production URL: https://www.ravfitness.com.au. Workflow: feature push → verified Vercel preview → authorized merge to main → automatic production deployment → live verification. Production is not yet marked Passed.
+* Manual preview approval (18 September 2026): Ravi reviewed the authenticated Vercel preview for homepage commit e195190d72ecb8622f447032bfb1dc0d454a1a13 and approved desktop and mobile appearance. Vercel deployment and Preview Comments checks passed. Release PR: https://github.com/ravfitness/ravfitness-site/pull/1. Production verification remains pending merge and automatic deployment to https://www.ravfitness.com.au.
+* Resume inspection: working tree clean; HomeAboutPreview.tsx is absent from both HEAD and the working tree and has no committed history. It was an unused untracked intermediate component superseded by HomeTransformation before the homepage commit, not a pending tracked deletion. No restoration or separate deletion commit is needed; existing committed code is preserved.
 * RF-050 remains Review with production Passed and Email Enquiry Pending. RF-045 remains Ready and deferred; these tests do not close the previously reported intermittent header issue. Dedicated /coaching retains outdated 3–6 People wording pending separately approved correction.
 
 ### RF-044 Stage 4A — Conversion-focused Home preview content map (historical approved plan)
