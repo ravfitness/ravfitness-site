@@ -781,3 +781,61 @@ Add one entry after every completed task.
 | 15 September 2026 | RF-049 Client Results page foundation | Production verification passed, confirmed by Ravi; Done | 37c36ca | Production verified |
 | 16 September 2026 | RF-051 platform integration direction | Done; production verification Passed, confirmed by Ravi in the Stage 4A brief | 9025357 | Production verified |
 | 16 September 2026 | RF-044 Stage 4A Home content plan | Completed; final order, exact copy, Anthea feature/portrait, independent previews, legacy anchors, compact booking CTA and unchanged Hero approved by Ravi | This documentation checkpoint | No deployment authorized |
+
+## Coaching Page Approved Design Implementation — 18 September 2026
+
+Status: **Approved by Ravi after desktop and 375px mobile review; release validation passed. Deployment preview approved by Ravi; production release pending.**
+Branch: `feature/coaching-details-page`. This enhancement follows the completed RF-046 foundation; its historical production status is unchanged.
+
+- Ravi approved the Coaching content/design and implementation architecture. Added the Coaching hero, two personal-training cards, PT Packages strip, Online Coaching card, three Transformation Program cards, Client Results strip and final booking/WhatsApp CTA. Partner and semi-private coaching is explicitly 2–3 people maximum. No prices or separate service routes.
+- Structured, typed content supplies all seven options to one reusable native details dialog. Desktop uses a centred modal; mobile uses a bottom sheet with independently scrolling content and an accessible footer CTA. Supports Enter/Space activation, Escape, close button, backdrop dismissal, focus trapping/restoration and background scroll locking/restoration.
+- Booking uses `/book`; results uses `/results`; WhatsApp reuses the approved recipient and existing general enquiry URL, with approved service-specific prefilled enquiries for packages, online coaching and programs. No enquiry was sent during testing.
+- Added route-specific title, description, canonical and Open Graph metadata for `/coaching`; global SEO was not edited.
+- Approved reference deviations: omitted the handwritten decorative motto because no suitable existing asset was available; retained existing typography and unchanged shared navigation without a Coaching active-state treatment. No fonts, dependencies or assets added.
+- Exact files: modified `components/coaching/CoachingServices.tsx`, `app/coaching/page.tsx` and `WEBSITE_PROJECT.md`; created `components/coaching/coachingContent.ts` and `components/coaching/CoachingDetailsDialog.tsx`.
+- Validation: `npm.cmd run lint` and `npm.cmd run build` passed, including TypeScript and all static routes. Browser checks at 1440, 1024, 768, 390, 375 and 320px passed without horizontal overflow. All seven dialogs passed open, Tab/Shift+Tab containment, Escape, focus restoration, scroll restoration and viewport checks at all six widths. Additional 320×568 checks passed for keyboard activation, close button, backdrop dismissal, internal scrolling and visible 44px CTA. Desktop/mobile screenshots were compared with the supplied reference.
+- Navigation checks: Home, Coaching, Book and Results loaded; shared mobile menu opening, Escape closing and Home navigation passed. Canonical and CTA destinations verified. No browser console errors observed. Existing Home, header, footer, booking and other dedicated-page source files unchanged.
+- `git diff --check` passed. Complete tracked/untracked changes reviewed; only the five scoped files changed, nothing staged. Existing non-blocking baseline-browser-mapping freshness warning remains; no dependency update made. Existing inherited `/og.jpg` metadata reference remains unchanged in meaning; the asset is absent from this checkout and was not added in this task.
+- RF-045 remains deferred; RF-050 remains Review with production Passed and Email Enquiry Pending. No commit, push or deployment. Ravi's final visual/content approval remains pending at `http://localhost:3000/coaching`.
+
+### Coaching visual-density correction — pending Ravi's review
+
+- Ravi rejected the initial visual match; the prior functionality checks did not constitute visual approval. This correction retains all approved wording, seven-option dialog architecture, CTA destinations and metadata.
+- Only CoachingServices.tsx presentation classes changed in this pass, alongside this tracker. Hero vertical padding is now 16px mobile / 20px desktop (previously 28px / 40px); heading, subtitle and CTA gaps are tighter.
+- Body section gaps reduced to 16px mobile / 20px desktop (previously 24px / 28px). Service cards use 12px top padding, 12px mobile / 20px desktop horizontal padding, tighter title/bullet spacing and no extra bottom padding. Online remains content-height without a fixed/minimum height; desktop transformation cards remain equal height.
+- Package and proof strips use 8px vertical padding. Final CTA uses 12px vertical padding and 8px button gaps. Retained the existing maximum content width, desktop columns, typography family, colours, visible focus states and minimum 44px controls. Mobile headings/body hierarchy tightened without changing content.
+- Compared the approved reference directly with fresh localhost screenshots at 1440px and 375px, including lower-page sections. Density, spacing and proportions were reviewed; shared header remains unchanged and handwritten decoration remains omitted as approved. Final visual acceptance remains Ravi's decision.
+- Validation repeated: lint, production build/TypeScript and git diff --check passed. All seven dialogs passed at 1440, 1024, 768, 390, 375 and 320px (42 checks), including focus containment, Escape and restoration, with no horizontal overflow or console errors. Additional keyboard activation, close/backdrop, 320x568 scrollable dialog, CTA and mobile navigation regression checks passed.
+- Existing baseline-browser-mapping freshness warning remains non-blocking. Local server remains available at http://localhost:3000/coaching. No files staged, committed, pushed or deployed.
+
+### Coaching PT Packages removal — 19 September 2026
+
+- Ravi approved removing public PT session quantities; the appropriate session/package option will be discussed during the complimentary consultation. This supersedes the historical seven-option/package-strip plan above.
+- Removed the PT Packages strip, Single Session / 5 Sessions / 10 Sessions labels, Explore PT Packages trigger, package option type/data and package-specific WhatsApp enquiry. Six options remain in the existing reusable dialog.
+- Current order: Choose Your Coaching → Personal Training → Online Coaching → Transformation Programs → Real People. Real Progress. → Not Sure Where to Start?
+- Changed CoachingServices.tsx and coachingContent.ts plus this tracker. Reviewed Personal Training content/dialog styling, all other service content, shared dialog behaviour, header/footer and CTA destinations remain unchanged.
+- Lint, production build/TypeScript and git diff --check passed. Source search found no remaining PT Packages references in app/ or components/. Historical documentation is retained. Existing baseline-browser-mapping freshness warning remains non-blocking.
+- Awaiting Ravi's visual review; nothing staged, committed, pushed or deployed.
+
+### Online Coaching refinement — 19 September 2026
+
+- Applied the approved Online Coaching card title, semibold supporting line and unchanged five summary bullets. Dialog uses the approved seven bullets and positive How it works explanation, replacing the previous clarification. Supporting line is semibold; compact information box uses a semibold heading and normal body text.
+- Coaching-owned copy now uses Rav: One-to-One session bullet, WhatsApp button label and route description. Shared About Ravi navigation, URLs, recipient and unrelated pages remain unchanged. Online service-specific WhatsApp enquiry is preserved.
+- Modified coachingContent.ts, CoachingServices.tsx, CoachingDetailsDialog.tsx and app/coaching/page.tsx plus this tracker. Other approved service content and dialog mechanics unchanged.
+- Lint, production build/TypeScript and git diff --check passed. Desktop 1440px and mobile 375px screenshots reviewed; Online dialog fits the tested desktop viewport without internal scrolling. Six dialogs exercised across six widths with focus containment, Escape and restoration checks. No remaining Ravi references in Coaching-owned source.
+- Existing browser-mapping freshness warning remains. Browser capture reported development HMR WebSocket network-suspension messages; these are recorded separately from dialog interaction results. No deployment, commit, push or staging; awaiting Ravi's review.
+
+### Coaching final approval and release checkpoint — 19 September 2026
+
+- Ravi completed desktop and 375px mobile review and explicitly approved production release. No further visual/content changes made.
+- Final order: Choose Your Coaching; Personal Training (One-to-One, Partner & Semi-Private); Online Coaching; Transformation Programs (6-Week, 12-Week, Summer); Real People. Real Progress.; Not Sure Where to Start? PT Packages intentionally removed.
+- Final approved refinements: Rav naming in Coaching-owned copy; exact reviewed Personal Training, Online and Transformation dialog content; semibold supporting lines; compact Transformation spacing; 560px responsive desktop dialog max-width; final CTA gold divider removed with spacing retained.
+- Final lint, production build/TypeScript and git diff --check Passed. All six dialogs tested across 320, 375, 390, 768, 1024 and 1440px with no overflow; focus containment, Escape and scroll/focus restoration Passed. Browser checks captured no console errors. Booking/results route loads, mobile navigation and approved WhatsApp recipient/service messages verified without sending enquiries.
+- Complete tracked/untracked review: only WEBSITE_PROJECT.md, app/coaching/page.tsx, components/coaching/CoachingServices.tsx, components/coaching/coachingContent.ts and components/coaching/CoachingDetailsDialog.tsx. No temporary/debug files in the release; browser evidence/helpers are outside the repository. Home, shared header/footer, unrelated routes and dependencies unchanged.
+- Existing non-blocking browser-mapping freshness warning retained. Existing inherited og.jpg reference remains a known prior asset issue; unrelated SEO is unchanged.
+- Authorized release workflow: commit scoped files, push feature/coaching-details-page, create PR to main, verify Vercel preview and checks before merge, then verify automatic Vercel production deployment and live /coaching. Production status remains pending until observed.
+
+### Coaching deployment-preview approval and resumed release
+
+- Ravi confirmed final desktop, mobile and deployment-preview visual approval for implementation 412dfc40389e0d299e0f8b714b9946d5f60dbab5 (PR #4). Working source matches the reviewed preview; no code changes were made during the mobile investigation or resumed release. The reported mobile issue was not reproduced locally, and Ravi subsequently approved the final preview.
+- Required production build rerun now Passed, including TypeScript and all static routes; lint and git diff --check Passed. All six dialogs and intended destinations rechecked. No temporary/debug files in the release. This commit records approval only; production verification follows merge and automatic Vercel deployment.
