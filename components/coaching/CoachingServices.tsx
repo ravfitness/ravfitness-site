@@ -1,109 +1,84 @@
-export default function CoachingServices() {
+"use client";
+
+import Link from "next/link";
+import { useCallback, useState } from "react";
+import CoachingDetailsDialog from "./CoachingDetailsDialog";
+import { coachingOptions, whatsappUrl, type CoachingOptionId } from "./coachingContent";
+
+const primaryClass = "inline-flex min-h-11 items-center justify-center rounded-xl bg-[#f5b533] px-5 py-2 text-center text-sm font-semibold text-black shadow-sm hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#946200]";
+const outlineClass = "inline-flex min-h-11 items-center justify-center rounded-xl border border-gray-400 bg-white px-5 py-2 text-center text-sm font-semibold text-gray-900 hover:border-[#f5b533] hover:bg-[#fff9ec] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#946200]";
+const sectionHeadingClass = "mb-2 text-xl font-bold leading-tight text-gray-900 md:text-[28px]";
+
+function ServiceCard({ id, onOpen, prose = false }: { id: CoachingOptionId; onOpen: (id: CoachingOptionId) => void; prose?: boolean }) {
+  const option = coachingOptions[id];
+  const isPersonalTraining = id === "one-to-one" || id === "semi-private";
   return (
-        <section
-          id="services"
-          className="bg-[#f7f7f7] border-t border-gray-200 scroll-mt-14 md:scroll-mt-16
-             min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-4rem)]"
-        >
-          <div className="px-6 md:px-10 lg:px-14 pt-8 pb-20">
-            <div className="max-w-screen-2xl mx-auto">
-              {/* Section heading */}
-              <h2 className="text-3xl md:text-[2rem] font-bold mb-2 text-center text-gray-900">
-                How We Can Train
-              </h2>
+    <article className="relative flex min-w-0 flex-col rounded-xl border border-gray-200 border-t-[3px] border-t-[#f5b533] bg-white px-3 pt-3 pb-0 shadow-sm md:px-5 md:pt-3">
+      <h3 className="text-base font-bold leading-tight md:text-lg text-gray-900">{option.title}</h3>
+      {id === "online" && <p className="mt-1 text-sm font-semibold leading-snug text-gray-600 md:text-base">{option.supporting}</p>}
+      {prose ? <p className="mt-1 text-sm leading-snug text-gray-600 md:text-base">{option.summary[0]}</p> : (
+        <ul className="mt-1 list-disc pl-5 text-sm leading-tight md:text-base text-gray-600 marker:text-[#f5b533]">
+          {option.summary.map((item) => <li key={item}>{item}</li>)}
+        </ul>
+      )}
+      <button type="button" aria-label={`View details: ${option.title}`} aria-haspopup="dialog" onClick={() => onOpen(id)} className={`mt-auto inline-flex ${isPersonalTraining ? "min-h-9" : "min-h-11"} cursor-pointer items-center self-start rounded-sm text-sm font-medium text-[#946200] after:absolute after:inset-0 after:rounded-xl hover:underline focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-offset-4 focus-visible:after:outline-[#946200]`}>View Details <span aria-hidden="true" className="ml-1">+</span></button>
+    </article>
+  );
+}
 
-              <p className="text-center text-gray-600 mb-6 max-w-2xl mx-auto text-[15px] md:text-base leading-relaxed">
-                Choose the coaching style that fits your goals, schedule and personality —{" "}
-                I&apos;ll handle the plan, the progression and the accountability.
-              </p>
-
-              {/* Cards */}
-              <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-                {/* 1:1 PT */}
-                <div className="p-6 bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-md transition">
-                  <h3 className="text-[1.05rem] md:text-lg font-semibold mb-2 text-gray-900">
-                    1-on-1 Coaching (Premium PT)
-                  </h3>
-
-                  <p className="text-xs text-gray-500 mb-3 font-medium">
-                    Best for: People who want structure and accountability
-                  </p>
-
-                  <p className="text-sm text-gray-600 mb-4">
-                    Private, personalised coaching built around your body, schedule and goals.
-                    Ideal if you want expert guidance, clear structure and strong accountability.
-                  </p>
-
-                  <ul className="text-xs text-gray-600 space-y-1 mb-4">
-                    <li>• Strength &amp; mobility focused</li>
-                    <li>• Technique-first coaching</li>
-                    <li>• Adjusted around injuries &amp; limitations</li>
-                    <li>• Fits your work &amp; family life</li>
-                  </ul>
-
-                  <p className="text-xs font-semibold text-[#f5b533] mt-auto pt-4">
-                    Goal: Build real strength • Boost energy • Rebuild confidence
-                  </p>
-                </div>
-
-                {/* Small Group */}
-                <div className="p-6 bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col transition hover:-translate-y-1 hover:shadow-md">
-                  <h3 className="text-[1.05rem] md:text-lg font-semibold mb-1 text-gray-900">
-                    Small Group Training
-                  </h3>
-
-                  <p className="text-xs text-gray-500 mb-1">3–6 People</p>
-
-                  <p className="text-xs text-gray-500 mb-3">
-                    Best for: Consistency, energy, and community
-                  </p>
-
-                  <p className="text-sm text-gray-600 mb-4">
-                    Train with a small crew in a focused, high-energy environment.
-                    Enough hype to push you, small enough for proper coaching on every set.
-                  </p>
-
-                  <ul className="text-xs text-gray-600 space-y-1 mb-4">
-                    <li>• Strength + conditioning based sessions</li>
-                    <li>• Great value with real coaching time</li>
-                    <li>• Supportive, like-minded community</li>
-                    <li>• Built to keep you consistent long-term</li>
-                  </ul>
-
-                  <p className="text-xs font-semibold text-[#f5b533] mt-auto pt-4">
-                    Goal: Community • Consistency • Progress
-                  </p>
-                </div>
-
-                {/* Online Coaching */}
-                <div className="p-6 bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col transition hover:-translate-y-1 hover:shadow-md">
-                  <h3 className="text-[1.05rem] md:text-lg font-semibold mb-2 text-gray-900">
-                    Online Coaching (Anywhere)
-                  </h3>
-
-                  <p className="text-xs text-gray-500 mb-3">
-                    Best for: Beginners or experienced trainees who want structure, guidance, and accountability
-                  </p>
-
-                  <p className="text-sm text-gray-600 mb-4">
-                    For people already training who want structure, progression and weekly
-                    accountability — without needing to be in the same gym as me.
-                  </p>
-
-                  <ul className="text-xs text-gray-600 space-y-1 mb-4">
-                    <li>• App-based training plans tailored to you</li>
-                    <li>• Weekly check-ins &amp; program adjustments</li>
-                    <li>• Video form feedback &amp; support</li>
-                    <li>• Clear progression month to month</li>
-                  </ul>
-
-                  <p className="text-xs font-semibold text-[#f5b533] mt-auto pt-4">
-                    Goal: Structure • Steady progression • Accountability
-                  </p>
-                </div>
-              </div>
+export default function CoachingServices() {
+  const [selected, setSelected] = useState<CoachingOptionId | null>(null);
+  const closeDialog = useCallback(() => setSelected(null), []);
+  return (
+    <>
+      <section aria-labelledby="coaching-heading" className="bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6 md:py-5">
+          <h1 id="coaching-heading" className="text-[28px] font-extrabold leading-tight text-gray-900 md:text-5xl">Choose Your <span className="text-[#f5b533]">Coaching</span></h1>
+          <p className="mt-1 text-sm leading-snug text-gray-600 md:text-lg">Three ways to train. Choose what fits your goals and lifestyle.</p>
+          <Link href="/book" className={`${primaryClass} mt-2 w-full sm:w-auto`}>Book a Complimentary Session</Link>
+        </div>
+      </section>
+      <div id="services" className="scroll-mt-14 bg-[#f7f7f7] md:scroll-mt-16">
+        <div className="mx-auto max-w-6xl space-y-4 px-4 py-4 sm:px-6 md:space-y-5 md:py-4">
+          <section aria-labelledby="personal-training-heading">
+            <h2 id="personal-training-heading" className={sectionHeadingClass}>Personal Training</h2>
+            <div className="grid gap-3 md:grid-cols-2 md:gap-5">
+              <ServiceCard id="one-to-one" onOpen={setSelected} />
+              <ServiceCard id="semi-private" onOpen={setSelected} />
             </div>
-          </div>
-        </section>
+          </section>
+          <section aria-labelledby="online-coaching-heading">
+            <h2 id="online-coaching-heading" className={sectionHeadingClass}>Online Coaching</h2>
+            <ServiceCard id="online" onOpen={setSelected} />
+          </section>
+          <section aria-labelledby="transformation-programs-heading">
+            <h2 id="transformation-programs-heading" className={sectionHeadingClass}>Transformation Programs</h2>
+            <div className="grid gap-3 lg:grid-cols-3 lg:gap-5">
+              <ServiceCard id="six-week" onOpen={setSelected} prose />
+              <ServiceCard id="twelve-week" onOpen={setSelected} prose />
+              <ServiceCard id="summer" onOpen={setSelected} prose />
+            </div>
+          </section>
+          <section aria-labelledby="coaching-results-heading" className="flex flex-col gap-2 rounded-xl border border-gray-200 bg-white/60 px-3 py-2 md:flex-row md:items-center md:justify-between md:px-6">
+            <div className="min-w-0">
+              <h2 id="coaching-results-heading" className="text-lg font-bold text-gray-900 md:text-xl">Real People. Real Progress.</h2>
+              <p className="mt-1 text-sm leading-snug text-gray-600">Existing RavFitness clients building strength, energy and confidence.</p>
+            </div>
+            <Link href="/results" className={`${outlineClass} shrink-0`}>See Client Results <span aria-hidden="true" className="ml-2">→</span></Link>
+          </section>
+          <section aria-labelledby="coaching-start-heading" className="grid gap-3 rounded-xl bg-neutral-950 p-3 text-white md:grid-cols-2 md:items-center md:px-6 md:py-3">
+            <div>
+              <h2 id="coaching-start-heading" className="text-xl font-bold md:text-[28px]">Not Sure Where to Start?</h2>
+              <p className="mt-1 text-sm leading-snug text-neutral-300">Tell me your goal and I’ll help you choose the right option.</p>
+            </div>
+            <div className="flex flex-col gap-2 md:pl-6">
+              <Link href="/book" className={`${primaryClass} focus-visible:outline-white`}>Book a Complimentary Session</Link>
+              <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-xl border border-[#f5b533] px-5 py-2 text-center text-sm font-semibold text-white hover:bg-[#f5b533]/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f5b533]">WhatsApp Rav</a>
+            </div>
+          </section>
+        </div>
+      </div>
+      {selected && <CoachingDetailsDialog option={coachingOptions[selected]} onClose={closeDialog} />}
+    </>
   );
 }
