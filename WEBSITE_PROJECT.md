@@ -784,7 +784,7 @@ Add one entry after every completed task.
 
 ## Coaching Page Approved Design Implementation — 18 September 2026
 
-Status: **Approved by Ravi after desktop and 375px mobile review; release validation passed. Vercel preview/production release pending.**
+Status: **Approved by Ravi after desktop and 375px mobile review; release validation passed. Deployment preview approved by Ravi; production release pending.**
 Branch: `feature/coaching-details-page`. This enhancement follows the completed RF-046 foundation; its historical production status is unchanged.
 
 - Ravi approved the Coaching content/design and implementation architecture. Added the Coaching hero, two personal-training cards, PT Packages strip, Online Coaching card, three Transformation Program cards, Client Results strip and final booking/WhatsApp CTA. Partner and semi-private coaching is explicitly 2–3 people maximum. No prices or separate service routes.
@@ -834,3 +834,8 @@ Branch: `feature/coaching-details-page`. This enhancement follows the completed 
 - Complete tracked/untracked review: only WEBSITE_PROJECT.md, app/coaching/page.tsx, components/coaching/CoachingServices.tsx, components/coaching/coachingContent.ts and components/coaching/CoachingDetailsDialog.tsx. No temporary/debug files in the release; browser evidence/helpers are outside the repository. Home, shared header/footer, unrelated routes and dependencies unchanged.
 - Existing non-blocking browser-mapping freshness warning retained. Existing inherited og.jpg reference remains a known prior asset issue; unrelated SEO is unchanged.
 - Authorized release workflow: commit scoped files, push feature/coaching-details-page, create PR to main, verify Vercel preview and checks before merge, then verify automatic Vercel production deployment and live /coaching. Production status remains pending until observed.
+
+### Coaching deployment-preview approval and resumed release
+
+- Ravi confirmed final desktop, mobile and deployment-preview visual approval for implementation 412dfc40389e0d299e0f8b714b9946d5f60dbab5 (PR #4). Working source matches the reviewed preview; no code changes were made during the mobile investigation or resumed release. The reported mobile issue was not reproduced locally, and Ravi subsequently approved the final preview.
+- Required production build rerun now Passed, including TypeScript and all static routes; lint and git diff --check Passed. All six dialogs and intended destinations rechecked. No temporary/debug files in the release. This commit records approval only; production verification follows merge and automatic Vercel deployment.
